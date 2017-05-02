@@ -1,0 +1,74 @@
+.parallax {
+    background: url("../images/main_bg.png") no-repeat fixed center;
+    background-size: 100% 100%;
+    min-height: 350px;
+}
+
+.page-header-content {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.page-header h1 {
+    color: white;
+    font-size: 100px;
+    margin-bottom: -50px;
+    padding-top: 5px;
+    font-family: "Roboto Black", sans-serif;
+}
+
+.page-header p {
+    color: white;
+    font-size: 50px;
+}
+
+.page-header a {
+    color: white;
+    font-size: 15px;
+    font-family: "Microsoft YaHei Light", sans-serif;
+}
+
+.connect {
+    margin-top: 20px;
+}
+
+.connect .btn {
+    display: inline-table;
+    padding: 0;
+}
+
+/*------------- Footer --------------*/
+
+.subscribe {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.subscribe img {
+    height: 65px;
+}
+
+.email input {
+    margin-top: 5px;
+    height: 42px;
+}
+
+#content-footer {
+    background-color: #26A69A;
+    height: 75px;
+    border: none;
+}
+
+#content-footer > .container {
+    padding-top: 30px;
+}
+
+#content-footer a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#content-footer a:hover{
+    color: white;
+}
+
