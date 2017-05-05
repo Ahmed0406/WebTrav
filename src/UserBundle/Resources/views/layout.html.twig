@@ -11,13 +11,22 @@
     <link href="{{ asset('css/components.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/colors.css') }}" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
+
+
 </head>
+
 <body class="login-container">
 {% if app.request.hasPreviousSession %}
     {% for type, messages in app.session.flashbag.all() %}
         {% for message in messages %}
-            <div class="flash-{{ type }}">
-                {{ message }}
+            <div class="row">
+                <div class="col-md-6 pull-right">
+                    <div class="alert alert-{{ type }} alert-styled-right alert-arrow-right alert-bordered">
+                        <button type="button" class="close" data-dismiss="alert"><span>&times;</span><span
+                                    class="sr-only">Close</span></button>
+                        <span class="text-semibold">{{ message }}</span>
+                    </div>
+                </div>
             </div>
         {% endfor %}
     {% endfor %}
@@ -32,22 +41,11 @@
 
             <!-- Main content -->
             <div class="content-wrapper">
-
                 <!-- Content area -->
-                <div class="content pb-20">
-
-                    <!-- Tabbed form -->
-                    <div class="tabbable panel login-form width-400">
-
-                        {% block fos_user_content %}
-                        {% endblock fos_user_content %}
-
-                    </div>
-                    <!-- /tabbed form -->
-
+                <div class="content">
+                    {% block fos_user_content %}{% endblock %}
                 </div>
                 <!-- /content area -->
-
             </div>
             <!-- /main content -->
 
@@ -69,9 +67,15 @@
 <!-- Theme JS files -->
 <script type="text/javascript" src="{{ asset('js/plugins/forms/validation/validate.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/forms/styling/uniform.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/plugins/notifications/pnotify.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/plugins/notifications/noty.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/plugins/notifications/jgrowl.min.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('js/core/app.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/login_validation.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/pages/form_inputs.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/pages/components_notifications_other.js') }}"></script>
 <!-- /theme JS files -->
+
 </body>
 </html>
