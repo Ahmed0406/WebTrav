@@ -1,5 +1,11 @@
 services:
-    app.form.registration:
-        class: UserBundle\Form\RegistrationType
+
+    app.form.candidat.registration:
+        class: UserBundle\Form\Type\RegistrationUserCandidatFormType
         tags:
-            - { name: form.type, alias: app_user_registration }
+            - { name: form.type, alias: app_user_candidat_registration }
+
+    app.form.recruteur.registration:
+        class: UserBundle\Form\Type\RegistrationUserRecruteurFormType
+        tags:
+            - { name: form.type, alias: app_user_recruteur_registration }

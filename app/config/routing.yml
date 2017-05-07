@@ -3,6 +3,15 @@ user:
     type:     annotation
     prefix:   /
 
+user_cadidat_registration:
+    path:  /register/user-candidat
+    defaults: { _controller: UserBundle:RegistrationUserCandidat:register }
+
+user_recruteur_registration:
+    path:  /register/user-recruteur
+    defaults: { _controller: UserBundle:RegistrationUserRecruteur:register }
+
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation

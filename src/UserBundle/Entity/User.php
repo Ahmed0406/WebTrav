@@ -8,8 +8,11 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
+ * @ORM\InheritanceType("JOINED")
+ * @ORM\DiscriminatorColumn(name="type", type="string")
+ * @ORM\DiscriminatorMap({"user_candidat" = "UserCandidat", "user_recruteur" = "UserRecruteur"})
  */
-class User extends BaseUser
+abstract class User extends BaseUser
 {
     /**
      * @ORM\Id
@@ -22,6 +25,8 @@ class User extends BaseUser
     {
         parent::__construct();
         // your own logic
+        $this->roles = array('ROLE_USER');
     }
+
 }
 
