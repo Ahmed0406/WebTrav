@@ -15,6 +15,8 @@
                                 <small class="display-block">Tous les champs sont requis</small>
                             </h4>
                         </div>
+                        {{ form_widget(form) }}
+{#
 
                         <div class="form-group has-feedback">
                             {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder':'form.username'} }) }}
@@ -93,6 +95,7 @@
                                 </div>
                             </div>
                         </div>
+#}
 
                         <div class="form-group">
                             <div class="checkbox">
