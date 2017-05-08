@@ -3037,7 +3037,11 @@ input[class*=bg-] + .form-control-feedback {
     }
 
     .navbar-top {
-        padding-top: 75px
+        padding-top: 73px
+    }
+
+    .has-top{
+        padding-top: 45px
     }
 
     .navbar-top .sidebar-fixed.affix {

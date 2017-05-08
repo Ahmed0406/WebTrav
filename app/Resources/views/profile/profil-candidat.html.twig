@@ -1,0 +1,989 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        <!-- Cover area -->
+        <div class="profile-cover">
+            <div class="profile-cover-img" style="background-image: url({{ asset('images/demo/cover4.jpg') }})"></div>
+            <div class="media">
+                <div class="media-left">
+                    <a href="#" class="profile-thumb">
+                        <img src="{{ asset('images/demo/users/face2.jpg') }}" class="img-circle" alt="">
+                    </a>
+                </div>
+
+                <div class="media-body">
+                    <h1>Alex Tohay
+                        <small class="display-block">UX/UI designer</small>
+                    </h1>
+                </div>
+
+                <div class="media-right media-middle">
+                    <ul class="list-inline list-inline-condensed no-margin-bottom text-nowrap">
+                        <li><a href="#" class="btn btn-default"><i class="icon-file-picture position-left"></i>
+                                Cover image</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /cover area -->
+
+        <!-- Toolbar -->
+        <div class="navbar navbar-default navbar-xs content-group">
+            <ul class="nav navbar-nav visible-xs-block">
+                <li class="full-width text-left">
+                    <a data-toggle="collapse" data-target="#navbar-filter"><i class="icon-menu7"></i></a></li>
+            </ul>
+
+            <div class="navbar-collapse collapse" id="navbar-filter">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#experiences" data-toggle="tab"><i class="icon-stack-check position-left"></i>
+                            Expériences</a>
+                    </li>
+                    <li>
+                        <a href="#formations" data-toggle="tab"><i class="icon-stack-text position-left"></i>
+                            Formations</a>
+                    </li>
+                    <li>
+                        <a href="#projets" data-toggle="tab"><i class="icon-pencil-ruler position-left"></i> Projets</a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#modal_default"><i
+                                    class="icon-add position-left text-info"></i></a>
+                    </li>
+                </ul>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#quiz" data-toggle="tab"><i class="icon-pencil7 position-left"></i>
+                            Quiz</a>
+                    </li>
+                    <li>
+                        <a href="#settings" data-toggle="tab"><i class="icon-cog3 position-left"></i>
+                            Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /toolbar -->
+
+
+        <!-- Content area -->
+        <div class="content">
+
+            <!-- User profile -->
+            <div class="row">
+                <div class="col-lg-9">
+
+                    <div class="tabbable">
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="experiences">
+
+                                <!-- Timeline -->
+                                <div class="timeline timeline-left content-group">
+                                    <div class="timeline-container">
+
+                                        <!-- Blog post -->
+                                        <div class="timeline-row">
+                                            <div class="timeline-icon">
+                                                2016 2017
+                                            </div>
+
+                                            <div class="panel panel-flat timeline-content">
+                                                <div class="panel-heading">
+                                                    <h6 class="panel-title"><a class="text-info" href="#">Projet fin
+                                                            d'etude (PFE)</a></h6>
+                                                    <div class="heading-elements">
+                                                        <ul class="icons-list">
+                                                            <li><a data-action="collapse"></a></li>
+                                                            <li><a data-action="close"></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel-body">
+
+                                                    <h6 class="content-group">
+                                                        <i class="icon-location4 position-left"></i>
+                                                        <a href="#">Microsoft</a>
+                                                    </h6>
+
+                                                    <blockquote>
+                                                        <p>Le Lorem Ipsum est simplement du faux texte employé dans
+                                                            la composition et la mise en page avant impression. Le
+                                                            Lorem Ipsum est le faux texte standard de l'imprimerie
+                                                            depuis les années 1500, quand un peintre anonyme
+                                                            assembla ensemble des morceaux de texte pour réaliser un
+                                                            livre spécimen de polices de texte. Il n'a pas fait que
+                                                            survivre cinq siècles, mais s'est aussi adapté à la
+                                                            bureautique informatique, sans que son contenu n'en soit
+                                                            modifié. Il a été popularisé dans les années 1960 grâce
+                                                            à la vente de feuilles Letraset contenant des passages
+                                                            du Lorem Ipsum, et, plus récemment, par son inclusion
+                                                            dans des applications de mise en page de texte, comme
+                                                            Aldus PageMaker.</p>
+                                                    </blockquote>
+                                                </div>
+
+                                                <div class="panel-footer panel-footer-transparent">
+                                                    <div class="heading-elements">
+                                                        <ul class="list-inline list-inline-condensed heading-text">
+                                                            <li>
+                                                                <a href="#" class="text-default"><i
+                                                                            class="icon-eye4 position-left"></i>
+                                                                    43</a>
+                                                            </li>
+                                                        </ul>
+
+                                                        <ul class="list-inline list-inline-condensed heading-text pull-right">
+                                                            <li>
+                                                                <a href="#" class="text-default">15
+                                                                    <i class="icon-thumbs-up2 position-left"></i>
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="#" class="text-default">
+                                                                    <i class="icon-thumbs-down2 position-left"></i>3
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /blog post -->
+
+                                        <!-- Blog post -->
+                                        <div class="timeline-row">
+                                            <div class="timeline-icon">
+                                                2015 2016
+                                            </div>
+
+                                            <div class="panel panel-flat timeline-content">
+                                                <div class="panel-heading">
+                                                    <h6 class="panel-title"><a class="text-info" href="#">Mini
+                                                            Projet</a></h6>
+                                                    <div class="heading-elements">
+                                                        <ul class="icons-list">
+                                                            <li><a data-action="collapse"></a></li>
+                                                            <li><a data-action="close"></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel-body">
+
+                                                    <h6 class="content-group">
+                                                        <i class="icon-location4 position-left"></i>
+                                                        <a href="#">ooredoo</a>
+                                                    </h6>
+
+                                                    <blockquote>
+                                                        <p>Le Lorem Ipsum est simplement du faux texte employé dans
+                                                            la composition et la mise en page avant impression. Le
+                                                            Lorem Ipsum est le faux texte standard de l'imprimerie
+                                                            depuis les années 1500, quand un peintre anonyme
+                                                            assembla ensemble des morceaux de texte pour réaliser un
+                                                            livre spécimen de polices de texte. Il n'a pas fait que
+                                                            survivre cinq siècles, mais s'est aussi adapté à la
+                                                            bureautique informatique, sans que son contenu n'en soit
+                                                            modifié. Il a été popularisé dans les années 1960 grâce
+                                                            à la vente de feuilles Letraset contenant des passages
+                                                            du Lorem Ipsum, et, plus récemment, par son inclusion
+                                                            dans des applications de mise en page de texte, comme
+                                                            Aldus PageMaker.</p>
+                                                    </blockquote>
+                                                </div>
+
+                                                <div class="panel-footer panel-footer-transparent">
+                                                    <div class="heading-elements">
+                                                        <ul class="list-inline list-inline-condensed heading-text">
+                                                            <li>
+                                                                <a href="#" class="text-default"><i
+                                                                            class="icon-eye4 position-left"></i>
+                                                                    13</a>
+                                                            </li>
+                                                        </ul>
+
+                                                        <ul class="list-inline list-inline-condensed heading-text pull-right">
+                                                            <li>
+                                                                <a href="#" class="text-default">5
+                                                                    <i class="icon-thumbs-up2 position-left"></i>
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="#" class="text-default">
+                                                                    <i class="icon-thumbs-down2 position-left"></i>1
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /blog post -->
+
+                                    </div>
+                                </div>
+                                <!-- /timeline -->
+
+                            </div>
+
+                            <div class="tab-pane fade" id="formations">
+
+                                <!-- formations -->
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a class="text-info" href="#">Université de
+                                                Monastir</a></h4>
+                                        <h6>ingénieur</h6>
+                                        <div class="heading-elements">
+                                            <ul class="icons-list">
+                                                <li><a data-action="collapse"></a></li>
+                                                <li><a data-action="close"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <div class="schedule">
+                                            <p>Le Lorem Ipsum est simplement du faux texte employé dans la
+                                                composition et la mise en page avant impression. Le Lorem Ipsum est
+                                                le faux texte standard de l'imprimerie depuis les années 1500, quand
+                                                un peintre anonyme assembla ensemble des morceaux de texte pour
+                                                réaliser un livre spécimen de polices de texte. Il n'a pas fait que
+                                                survivre cinq siècles,</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-footer panel-footer-transparent">
+                                        <div class="heading-elements">
+                                            <ul class="list-inline list-inline-condensed heading-text">
+                                                <li>
+                                                    <a href="#" class="text-default"><i
+                                                                class="icon-eye4 position-left"></i>
+                                                        43</a>
+                                                </li>
+                                            </ul>
+
+                                            <ul class="list-inline list-inline-condensed heading-text pull-right">
+                                                <li>
+                                                    <a href="#" class="text-default">15
+                                                        <i class="icon-thumbs-up2 position-left"></i>
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#" class="text-default">
+                                                        <i class="icon-thumbs-down2 position-left"></i>3
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- /formations -->
+
+                            </div>
+
+                            <div class="tab-pane fade" id="projets">
+
+
+                            </div>
+
+                            <div class="tab-pane fade" id="quiz">
+
+
+                                <!-- Search field -->
+                                <div class="panel panel-flat">
+                                    <div class="panel-body">
+                                        <form action="#" class="main-search">
+                                            <div class="input-group content-group">
+                                                <div class="has-feedback has-feedback-left">
+                                                    <input type="text" class="form-control input-xlg" value=""
+                                                           placeholder="De quelle domaine vous voulez">
+                                                    <div class="form-control-feedback">
+                                                        <i class="icon-search4 text-muted text-size-base"></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class="input-group-btn">
+                                                    <button type="submit" class="btn btn-primary btn-xlg">Search
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div class="row search-option-buttons">
+                                                <div class="col-sm-6">
+                                                    <ul class="list-inline list-inline-condensed no-margin-bottom">
+                                                        <li>
+                                                            <button type="reset" class="btn btn-link">
+                                                                <i class="icon-reload-alt position-left"></i>
+                                                                Réinitialiser votre recherche
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- /search field -->
+
+
+                                <!-- Detached content -->
+                                <div class="container-detached">
+                                    <div class="content-detached">
+
+                                        <!-- Cards layout -->
+                                        <ul class="media-list content-group">
+                                            <li class="media panel panel-body stack-media-on-mobile">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <img src="{{ asset('images/demo/brands/dell.png') }}"
+                                                             class="img-rounded img-lg" alt="">
+                                                    </a>
+                                                </div>
+
+                                                <div class="media-body">
+                                                    <h6 class="media-heading text-semibold">
+                                                        <a href="#">Interaction UX/UI Industrial Designer</a>
+                                                    </h6>
+
+                                                    <ul class="list-inline list-inline-separate text-muted mb-10">
+                                                        <li><a href="#" class="text-muted">Dell</a></li>
+                                                        <li>Amsterdam, Netherlands</li>
+                                                    </ul>
+
+                                                    Extended kindness trifling remember he confined outlived if.
+                                                    Assistance sentiments yet unpleasing say. Open they an busy they
+                                                    my such high. An active dinner wishes at unable hardly no talked
+                                                    on. Immediate him her resolving his favourite. Wished denote
+                                                    abroad at branch at. Mind what no by kept.
+                                                </div>
+
+                                                <div class="media-right text-nowrap">
+                                                    <span class="label bg-blue">New</span>
+                                                </div>
+                                            </li>
+
+                                            <li class="media panel panel-body stack-media-on-mobile">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <img src="{{ asset('images/demo/brands/northface.png') }}"
+                                                             class="img-rounded img-lg" alt="">
+                                                    </a>
+                                                </div>
+
+                                                <div class="media-body">
+                                                    <h6 class="media-heading text-semibold">
+                                                        <a href="#">Front-End Designer / Developer</a>
+                                                    </h6>
+
+                                                    <ul class="list-inline list-inline-separate text-muted mb-10">
+                                                        <li><a href="#" class="text-muted">The North Face</a></li>
+                                                        <li>The Hague, Netherlands</li>
+                                                    </ul>
+
+                                                    Quick six blind smart out burst. Perfectly on furniture
+                                                    dejection determine my depending an to. Add short water court
+                                                    fat. Her bachelor honoured perceive securing but desirous ham
+                                                    required. Questions deficient acuteness to engrossed as.
+                                                    Entirely led ten humoured greatest and yourself besides country.
+                                                </div>
+
+                                                <div class="media-right text-nowrap">
+                                                    <span class="label bg-blue">New</span>
+                                                </div>
+                                            </li>
+
+                                            <li class="media panel panel-body stack-media-on-mobile">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <img src="{{ asset('images/demo/brands/ibm.png') }}"
+                                                             class="img-rounded img-lg" alt="">
+                                                    </a>
+                                                </div>
+
+                                                <div class="media-body">
+                                                    <h6 class="media-heading text-semibold">
+                                                        <a href="#">UX Lead Designer</a>
+                                                    </h6>
+
+                                                    <ul class="list-inline list-inline-separate text-muted mb-10">
+                                                        <li><a href="#" class="text-muted">IBM</a></li>
+                                                        <li>Lelystad, Netherlands</li>
+                                                    </ul>
+
+                                                    Contented get distrusts certainty nay are frankness concealed
+                                                    ham. On unaffected resolution on considered of. No thought me
+                                                    husband or colonel forming effects. End sitting shewing who saw
+                                                    besides son musical adapted. Contrasted interested eat
+                                                    alteration pianoforte sympathize was.
+                                                </div>
+
+                                                <div class="media-right text-nowrap">
+                                                    <span class="text-muted">3 days ago</span>
+                                                </div>
+                                            </li>
+
+                                            <li class="media panel panel-body stack-media-on-mobile">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <img src="images/demo/brands/cnn.png"
+                                                             class="img-rounded img-lg" alt="">
+                                                    </a>
+                                                </div>
+
+                                                <div class="media-body">
+                                                    <h6 class="media-heading text-semibold">
+                                                        <a href="#">Designer, CRM</a>
+                                                    </h6>
+
+                                                    <ul class="list-inline list-inline-separate text-muted mb-10">
+                                                        <li><a href="#" class="text-muted">CNN</a></li>
+                                                        <li>Rotterdam, Netherlands</li>
+                                                    </ul>
+
+                                                    At as in understood an remarkably solicitude. Mean them very
+                                                    seen she she. Use totally written the observe pressed justice.
+                                                    Instantly cordially far intention recommend estimable yet her
+                                                    his. Ladies stairs enough esteem add fat all enable. Needed its
+                                                    design number winter see. Oh be me sure wise.
+                                                </div>
+
+                                                <div class="media-right text-nowrap">
+                                                    <span class="text-muted">4 days ago</span>
+                                                </div>
+                                            </li>
+
+                                            <li class="media panel panel-body stack-media-on-mobile">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <img src="images/demo/brands/transferwise.png"
+                                                             class="img-rounded img-lg" alt="">
+                                                    </a>
+                                                </div>
+
+                                                <div class="media-body">
+                                                    <h6 class="media-heading text-semibold">
+                                                        <a href="#">Senior UX Designer</a>
+                                                    </h6>
+
+                                                    <ul class="list-inline list-inline-separate text-muted mb-10">
+                                                        <li><a href="#" class="text-muted">Transfer Wise</a></li>
+                                                        <li>Nijmegen, Netherlands</li>
+                                                    </ul>
+
+                                                    By an outlived insisted procured improved am. Paid hill fine ten
+                                                    now love even leaf. Supplied feelings mr of dissuade recurred no
+                                                    it offering honoured. Am of of in collecting devonshire
+                                                    favourable excellence. Her sixteen end ashamed cottage yet
+                                                    reached get hearing invited. Resources ourselves.
+                                                </div>
+
+                                                <div class="media-right text-nowrap">
+                                                    <span class="text-muted">5 days ago</span>
+                                                </div>
+                                            </li>
+
+
+                                        </ul>
+                                        <!-- /cards layout -->
+
+
+                                        <!-- Pagination -->
+                                        <div class="text-center content-group-lg pt-20">
+                                            <ul class="pagination">
+                                                <li class="disabled"><a href="#"><i
+                                                                class="icon-arrow-small-left"></i></a></li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li><a href="#"><i class="icon-arrow-small-right"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- /pagination -->
+
+                                    </div>
+                                </div>
+                                <!-- /detached content -->
+
+
+                            </div>
+
+                            <div class="tab-pane fade" id="settings">
+
+                                <!-- Profile info -->
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">Profile information</h6>
+                                        <div class="heading-elements">
+                                            <ul class="icons-list">
+                                                <li><a data-action="collapse"></a></li>
+                                                <li><a data-action="reload"></a></li>
+                                                <li><a data-action="close"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Username</label>
+                                                        <input type="text" value="Eugene" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>Full name</label>
+                                                        <input type="text" value="Kopyov" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Address line 1</label>
+                                                        <input type="text" value="Ring street 12"
+                                                               class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>Address line 2</label>
+                                                        <input type="text" value="building D, flat #67"
+                                                               class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <label>City</label>
+                                                        <input type="text" value="Munich" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label>State/Province</label>
+                                                        <input type="text" value="Bayern" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label>ZIP code</label>
+                                                        <input type="text" value="1031" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Email</label>
+                                                        <input type="text" readonly="readonly"
+                                                               value="eugene@kopyov.com" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>Your country</label>
+                                                        <select class="select">
+                                                            <option value="germany" selected="selected">Germany
+                                                            </option>
+                                                            <option value="france">France</option>
+                                                            <option value="spain">Spain</option>
+                                                            <option value="netherlands">Netherlands</option>
+                                                            <option value="other">...</option>
+                                                            <option value="uk">United Kingdom</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Phone #</label>
+                                                        <input type="text" value="+99-99-9999-9999"
+                                                               class="form-control">
+                                                        <span class="help-block">+99-99-9999-9999</span>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label class="display-block">Upload profile image</label>
+                                                        <input type="file" class="file-styled">
+                                                        <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="text-right">
+                                                <button type="submit" class="btn btn-primary">Save
+                                                    <i class="icon-arrow-right14 position-right"></i></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- /profile info -->
+
+
+                                <!-- Account settings -->
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">Account settings</h6>
+                                        <div class="heading-elements">
+                                            <ul class="icons-list">
+                                                <li><a data-action="collapse"></a></li>
+                                                <li><a data-action="reload"></a></li>
+                                                <li><a data-action="close"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Username</label>
+                                                        <input type="text" value="Kopyov" readonly="readonly"
+                                                               class="form-control">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label>Current password</label>
+                                                        <input type="password" value="password" readonly="readonly"
+                                                               class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>New password</label>
+                                                        <input type="password" placeholder="Enter new password"
+                                                               class="form-control">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label>Repeat password</label>
+                                                        <input type="password" placeholder="Repeat new password"
+                                                               class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Profile visibility</label>
+
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="visibility" class="styled"
+                                                                       checked="checked">
+                                                                Visible to everyone
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="visibility"
+                                                                       class="styled">
+                                                                Visible to friends only
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="visibility"
+                                                                       class="styled">
+                                                                Visible to my connections only
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="visibility"
+                                                                       class="styled">
+                                                                Visible to my colleagues only
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label>Notifications</label>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" class="styled"
+                                                                       checked="checked">
+                                                                Password expiration notification
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" class="styled"
+                                                                       checked="checked">
+                                                                New message notification
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" class="styled"
+                                                                       checked="checked">
+                                                                New task notification
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" class="styled">
+                                                                New contact request notification
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="text-right">
+                                                <button type="submit" class="btn btn-primary">Save
+                                                    <i class="icon-arrow-right14 position-right"></i></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- /account settings -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+
+                    <!-- Navigation -->
+                    <div class="panel panel-flat">
+
+                        <div class="list-group no-border no-padding-top">
+                            <a href="#" class="list-group-item"><i class="icon-envelop"></i> Messages
+                                <span class="badge bg-danger pull-right">29</span></a>
+                            <a href="#" class="list-group-item"><i class="icon-users"></i> Friends</a>
+                        </div>
+                    </div>
+                    <!-- /navigation -->
+
+
+                    <!-- Connections -->
+                    <div class="panel panel-flat">
+                        <ul class="media-list media-list-linked pb-5">
+                            <li class="media">
+                                <a href="#" class="media-link">
+                                    <div class="media-left">
+                                        <img src="images/demo/users/face1.jpg" class="img-circle" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="media-heading text-semibold">James Alexander</span>
+                                        <span class="media-annotation">UI/UX expert</span>
+                                    </div>
+                                    <div class="media-right media-middle">
+                                        <span class="status-mark bg-success"></span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="media">
+                                <a href="#" class="media-link">
+                                    <div class="media-left">
+                                        <img src="images/demo/users/face2.jpg" class="img-circle" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="media-heading text-semibold">Jeremy Victorino</span>
+                                        <span class="media-annotation">Senior designer</span>
+                                    </div>
+                                    <div class="media-right media-middle">
+                                        <span class="status-mark bg-danger"></span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="media">
+                                <a href="#" class="media-link">
+                                    <div class="media-left">
+                                        <img src="images/demo/users/face6.jpg" class="img-circle" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="media-heading"><span class="text-semibold">Jordana Mills</span>
+                                        </div>
+                                        <span class="text-muted">Sales consultant</span>
+                                    </div>
+                                    <div class="media-right media-middle">
+                                        <span class="status-mark bg-grey-300"></span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="media">
+                                <a href="#" class="media-link">
+                                    <div class="media-left">
+                                        <img src="images/demo/users/face9.jpg" class="img-circle" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="media-heading"><span class="text-semibold">William Miles</span>
+                                        </div>
+                                        <span class="text-muted">SEO expert</span>
+                                    </div>
+                                    <div class="media-right media-middle">
+                                        <span class="status-mark bg-success"></span>
+                                    </div>
+                                </a>
+                            </li>
+
+
+                            <li class="media">
+                                <a href="#" class="media-link">
+                                    <div class="media-left">
+                                        <img src="images/demo/users/face3.jpg" class="img-circle" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="media-heading text-semibold">Margo Baker</span>
+                                        <span class="media-annotation">Google</span>
+                                    </div>
+                                    <div class="media-right media-middle">
+                                        <span class="status-mark bg-success"></span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="media">
+                                <a href="#" class="media-link">
+                                    <div class="media-left">
+                                        <img src="images/demo/users/face4.jpg" class="img-circle" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="media-heading text-semibold">Beatrix Diaz</span>
+                                        <span class="media-annotation">Facebook</span>
+                                    </div>
+                                    <div class="media-right media-middle">
+                                        <span class="status-mark bg-warning-400"></span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="media">
+                                <a href="#" class="media-link">
+                                    <div class="media-left">
+                                        <img src="images/demo/users/face5.jpg" class="img-circle" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="media-heading text-semibold">Richard Vango</span>
+                                        <span class="media-annotation">Microsoft</span>
+                                    </div>
+                                    <div class="media-right media-middle">
+                                        <span class="status-mark bg-grey-300"></span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /connections -->
+
+                </div>
+
+                <!-- add with modal -->
+                <div id="modal_default" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="navbar navbar-default ">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active">
+                                            <a href="#addExperiences" data-toggle="tab"><i
+                                                        class="icon-stack-check position-left"></i>
+                                                Expériences</a>
+                                        </li>
+                                        <li>
+                                            <a href="#addFormations" data-toggle="tab"><i
+                                                        class="icon-stack-text position-left"></i>
+                                                Formations</a>
+                                        </li>
+                                        <li>
+                                            <a href="#addProjets" data-toggle="tab"><i
+                                                        class="icon-pencil-ruler position-left"></i> Projets</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="tabbable">
+                                    <div class="tab-content">
+                                        <form action="#" class="tab-pane fade in active" id="addExperiences">
+                                            <div class="modal-body">
+                                                <div class="panel-body">
+                                                    <div class="schedule">
+                                                        addExperiences
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-link" data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="button" class="btn btn-primary">Save</button>
+                                            </div>
+                                        </form>
+
+                                        <form action="#" class="tab-pane fade" id="addFormations">
+                                            <div class="modal-body">
+                                                <div class="panel-body">
+                                                    <div class="schedule">
+                                                        addFormations
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-link" data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="button" class="btn btn-primary">Save</button>
+                                            </div>
+                                        </form>
+
+                                        <form action="#" class="tab-pane fade" id="addProjets">
+                                            <div class="modal-body">
+                                                <div class="panel-body">
+                                                    <div class="schedule">
+                                                        addProjets
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-link" data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="button" class="btn btn-primary">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- /add with modal -->
+                </div>
+                <!-- /user profile -->
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+{% endblock %}

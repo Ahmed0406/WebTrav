@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Admin</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+          type="text/css">
+    <link href="{{ asset('css/icons/icomoon/styles.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/core.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/components.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/colors.css') }}" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script type="text/javascript" src="{{ asset('js/plugins/loaders/pace.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/core/libraries/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/core/libraries/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/loaders/blockui.min.js') }}"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="{{ asset('js/plugins/visualization/d3/d3.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/visualization/d3/d3_tooltip.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/forms/styling/switchery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/forms/styling/uniform.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/forms/selects/bootstrap_multiselect.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/ui/moment/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/pickers/daterangepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/ui/nicescroll.min.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('js/core/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/pages/dashboard.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/pages/layout_fixed_custom.js') }}"></script>
+    <!-- /theme JS files -->
+
+</head>
+
+<body class="has-top">
+
+<!-- Main navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="{{ path('admin_default_index') }}"><img src="{{ asset('images/logo.png') }}" alt=""></a>
+
+        <ul class="nav navbar-nav visible-xs-block">
+            <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+            <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-mobile">
+
+        <ul class="nav navbar-nav navbar-right">
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-bubbles4"></i>
+                    <span class="visible-xs-inline-block position-right">Messages</span>
+                    <span class="badge bg-warning-400">0</span>
+                </a>
+
+            </li>
+
+            <li class="dropdown dropdown-user dropdown-user-a">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="{{ asset('images/demo/users/face2.jpg') }}" alt="">
+                    <span>Admin</span>
+                    <i class="caret"></i>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
+                    <li><a href="#"><span class="badge bg-teal-400 pull-right">0</span> <i
+                                    class="icon-comment-discussion"></i> Messages</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
+                    <li><a href="{{ path('fos_user_security_logout') }}"><i class="icon-switch2"></i> Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- /main navbar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main sidebar-fixed">
+            <div class="sidebar-content">
+
+
+                <!-- Main navigation -->
+                <div class="sidebar-category sidebar-category-visible">
+                    <div class="category-content no-padding">
+                        <ul class="navigation navigation-main navigation-accordion">
+
+                            <!-- Main -->
+                            <li><a href="#"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
+                            <li>
+                                <a href="#"><i class="icon-user"></i> <span>Utilisateur</span></a>
+                                <ul>
+                                    <li><a href="#">Candidat</a></li>
+                                    <li><a href="#">Recruteur</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-copy"></i> <span>Quiz</span></a>
+                                <ul>
+                                    <li><a href="#" id="quizPro">Quiz Pro</a></li>
+                                    <li><a href="#" id="quizStd">Quiz Standard</a></li>
+                                </ul>
+                            </li>
+                            <!-- /main -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- /main navigation -->
+
+            </div>
+        </div>
+        <!-- /main sidebar -->
+
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Content area -->
+            <div class="content">
+                {% block body %}{% endblock %}
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+</div>
+<!-- /page container -->
+
+</body>
+
+</html>

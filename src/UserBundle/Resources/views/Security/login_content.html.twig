@@ -1,94 +1,89 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<!-- Content area -->
-<div class="content pt-5 pb-5">
+<!-- Advanced login -->
 
-    <!-- Advanced login -->
-
-    <div class="panel panel-body login-form">
-        <form action="{{ path("fos_user_security_check") }}" method="post">
-            <div class="text-center">
-                <div class="icon-object border-success text-success"><i class="icon-user"></i></div>
-                <h4 class="content-group-lg">Connectez-vous à votre compte
-                    <small class="display-block">Entrez votre identification</small>
-                </h4>
+<div class="panel panel-body login-form">
+    <form action="{{ path("fos_user_security_check") }}" method="post">
+        <div class="text-center">
+            <div class="icon-object border-success text-success"><i class="icon-user"></i></div>
+            <h4 class="content-group-lg">Connectez-vous à votre compte
+                <small class="display-block">Entrez votre identification</small>
+            </h4>
+        </div>
+        {% if error %}
+            <div class="alert alert-danger text-center">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
             </div>
-            {% if error %}
-                <div class="alert alert-danger text-center">
-                    {{ error.messageKey|trans(error.messageData, 'security') }}
-                </div>
-            {% endif %}
-            <div class="form-group has-feedback has-feedback-left">
-                <input type="text" class="form-control" placeholder="Username ou Email" name="_username"
-                       value="{{ last_username }}">
-                <div class="form-control-feedback">
-                    <i class="icon-user text-muted"></i>
-                </div>
+        {% endif %}
+        <div class="form-group has-feedback has-feedback-left">
+            <input type="text" class="form-control" placeholder="Username ou Email" name="_username"
+                   value="{{ last_username }}">
+            <div class="form-control-feedback">
+                <i class="icon-user text-muted"></i>
             </div>
+        </div>
 
-            <div class="form-group has-feedback has-feedback-left">
-                <input type="password" class="form-control" placeholder="Password" name="_password">
-                <div class="form-control-feedback">
-                    <i class="icon-lock2 text-muted"></i>
-                </div>
+        <div class="form-group has-feedback has-feedback-left">
+            <input type="password" class="form-control" placeholder="Password" name="_password">
+            <div class="form-control-feedback">
+                <i class="icon-lock2 text-muted"></i>
             </div>
+        </div>
 
-            <div class="form-group login-options">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <label class="checkbox-inline">
-                            <input type="checkbox" class="styled" name="_remember_me">
-                            Remember
-                        </label>
-                    </div>
+        <div class="form-group login-options">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" class="styled" name="_remember_me">
+                        Remember
+                    </label>
+                </div>
 
-                    <div class="col-sm-6 text-right">
-                        <a href="#" data-toggle="modal" data-target="#modal-recover">Mot de passe Oublié?</a>
-                    </div>
+                <div class="col-sm-6 text-right">
+                    <a href="#" data-toggle="modal" data-target="#modal-recover">Mot de passe Oublié?</a>
                 </div>
             </div>
-            {% if csrf_token %}
-                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
-            {% endif %}
-            <div class="form-group">
-                <button type="submit" class="btn bg-blue btn-block">Login
-                    <i class="icon-arrow-right14 position-right"></i>
-                </button>
-            </div>
+        </div>
+        {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+        {% endif %}
+        <div class="form-group">
+            <button type="submit" class="btn bg-blue btn-block">Login
+                <i class="icon-arrow-right14 position-right"></i>
+            </button>
+        </div>
 
-            <div class="content-divider text-muted form-group"><span>Ou connectez-vous avec</span></div>
-            <ul class="list-inline form-group list-inline-condensed text-center">
-                <li>
-                    <a href="#" class="btn border-indigo text-indigo btn-flat btn-icon btn-rounded"><i
-                                class="icon-facebook"></i></a>
-                </li>
-                <li><a href="#" class="btn border-pink-300 text-pink-300 btn-flat btn-icon btn-rounded"><i
-                                class="icon-google-plus"></i></a>
-                </li>
-                <li>
-                    <a href="#"
-                       class="btn border-slate-600 text-slate-600 btn-flat btn-icon btn-rounded"><i
-                                class="icon-github"></i></a>
-                </li>
-                <li>
-                    <a href="#" class="btn border-info text-info btn-flat btn-icon btn-rounded"><i
-                                class="icon-linkedin"></i></a>
-                </li>
-                <li>
-                    <a href="#" class="btn border-info text-info btn-flat btn-icon btn-rounded"><i
-                                class="icon-twitter"></i></a>
-                </li>
-            </ul>
+        <div class="content-divider text-muted form-group"><span>Ou connectez-vous avec</span></div>
+        <ul class="list-inline form-group list-inline-condensed text-center">
+            <li>
+                <a href="#" class="btn border-indigo text-indigo btn-flat btn-icon btn-rounded"><i
+                            class="icon-facebook"></i></a>
+            </li>
+            <li><a href="#" class="btn border-pink-300 text-pink-300 btn-flat btn-icon btn-rounded"><i
+                            class="icon-google-plus"></i></a>
+            </li>
+            <li>
+                <a href="#"
+                   class="btn border-slate-600 text-slate-600 btn-flat btn-icon btn-rounded"><i
+                            class="icon-github"></i></a>
+            </li>
+            <li>
+                <a href="#" class="btn border-info text-info btn-flat btn-icon btn-rounded"><i
+                            class="icon-linkedin"></i></a>
+            </li>
+            <li>
+                <a href="#" class="btn border-info text-info btn-flat btn-icon btn-rounded"><i
+                            class="icon-twitter"></i></a>
+            </li>
+        </ul>
 
-            <div class="content-divider text-muted form-group"><span>Vous ne possédez pas de compte?</span></div>
-            <a href="{{ path('fos_user_registration_register') }}" class="btn btn-default btn-block content-group">S'inscrire</a>
-        </form>
-    </div>
-
-    <!-- /advanced login -->
-
+        <div class="content-divider text-muted form-group"><span>Vous ne possédez pas de compte?</span></div>
+        <a href="{{ path('fos_user_registration_register') }}" class="btn btn-default btn-block content-group">S'inscrire</a>
+    </form>
 </div>
-<!-- /content area -->
+
+<!-- /advanced login -->
+
 
 <!-- Password recovery form -->
 <div id="modal-recover" class="modal fade">
@@ -96,20 +91,23 @@
         <div class="modal-content login-form">
 
             <!-- Form -->
-            <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="modal-body fos_user_resetting_request">
+            <form action="{{ path('fos_user_resetting_send_email') }}" method="POST"
+                  class="modal-body fos_user_resetting_request">
                 <div class="text-center">
                     <div class="icon-object border-warning text-warning"><i class="icon-spinner11"></i></div>
                     <h5 class="content-group">Récupération de mot de passe</h5>
                 </div>
 
                 <div class="form-group has-feedback">
-                    <input class="form-control" type="text" id="username" name="username" required="required" placeholder="{{ 'resetting.request.username'|trans }}">
+                    <input class="form-control" type="text" id="username" name="username" required="required"
+                           placeholder="{{ 'resetting.request.username'|trans }}">
                     <div class="form-control-feedback">
                         <i class="icon-mail5 text-muted"></i>
                     </div>
                 </div>
 
-                <button type="submit" class="btn bg-blue btn-block">{{ 'resetting.request.submit'|trans }} <i class="icon-arrow-right14 position-right"></i></button>
+                <button type="submit" class="btn bg-blue btn-block">{{ 'resetting.request.submit'|trans }} <i
+                            class="icon-arrow-right14 position-right"></i></button>
             </form>
             <!-- /form -->
 

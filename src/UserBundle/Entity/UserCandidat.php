@@ -21,9 +21,16 @@ class UserCandidat extends User
     protected $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $nom;
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+        $this->roles = array('ROLE_CANDIDAT');
+    }
 
     /**
      * @return mixed

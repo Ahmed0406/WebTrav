@@ -10,7 +10,7 @@
                         <div class="">
                             <div class="">
                                 <a data-fancybox class="fancybox-media" href="http://www.youtube.com/watch?v=opj24KnzrWo">
-                                    <img src="images/play-youtube.png" alt="">
+                                    <img src="{{ asset('images/play-youtube.png') }}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -21,12 +21,15 @@
                         <p class="text-center">Meilleur site pour vous</p>
 
                         <div class="row connect">
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            {% else %}
                             <div class="btn col-md-3 col-md-offset-2">
-                                <a href="Login_registre.html"><img src="images/inscrit.png" alt="insrit"></a>
+                                <a href="{{ path('fos_user_security_login') }}"><img src="{{ asset('images/login.png') }}" alt="insrit"></a>
                             </div>
                             <div class="btn col-md-3 col-md-offset-1">
-                                <a href="Login_registre.html"><img src="images/login.png" alt="login"></a>
+                                <a href="{{ path('user_cadidat_registration') }}"><img src="{{ asset('images/inscrit.png') }}" alt="login"></a>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
 

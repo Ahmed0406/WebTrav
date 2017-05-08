@@ -19,4 +19,11 @@ class UserRecruteur extends User
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+        $this->roles = array('ROLE_RECRUTEUR');
+    }
 }

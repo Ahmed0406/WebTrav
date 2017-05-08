@@ -1,0 +1,854 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Content area -->
+    <div class="content">
+
+        <!-- Detached sidebar -->
+        <div class="sidebar-detached">
+            <div class="sidebar sidebar-default sidebar-separate">
+                <div class="sidebar-content">
+
+                    <!-- User details -->
+                    <div class="content-group">
+                        <div class="panel-body bg-info-700 border-radius-top text-center">
+                            <div class="content-group-sm">
+                                <h6 class="text-semibold no-margin-bottom">
+                                    Alexander Davidson
+                                </h6>
+
+                                <span class="display-block">Tunisia, Mahdia</span>
+                            </div>
+
+                            <a href="#" class="display-inline-block content-group-sm">
+                                <img src="assets/images/demo/users/face2.jpg" class="img-circle img-responsive"
+                                     alt="" style="width: 110px; height: 110px;">
+                            </a>
+
+                            <ul class="list-inline list-inline-condensed no-margin-bottom">
+                                <li>
+                                    <a href="#" class="btn bg-green btn-rounded btn-icon"><i
+                                                class="icon-facebook2"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn bg-green btn-rounded btn-icon"><i
+                                                class="icon-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn bg-green btn-rounded btn-icon"><i
+                                                class="icon-github"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="panel no-border-top no-border-radius-top">
+                            <ul class="navigation">
+                                <li class="navigation-header"></li>
+                                <li class="active">
+                                    <a href="#apropos" data-toggle="tab"><i class="icon-info3"></i>
+                                        Apropos</a>
+                                </li>
+
+                                <li><a href="#messages" data-toggle="tab"><i class="icon-envelop"></i>
+                                        Message <span class="badge bg-warning-400">23</span></a>
+                                </li>
+
+                                <li><a href="#settings" data-toggle="tab"><i class="icon-cog"></i>
+                                        Paramètre</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /user details -->
+
+
+                    <!-- Online users -->
+                    <div class="sidebar-category">
+                        <div class="category-title">
+                            <span>Suggestion Candidat</span>
+                            <ul class="icons-list">
+                                <li><a href="#" data-action="collapse"></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="category-content">
+                            <ul class="media-list">
+                                <li class="media">
+                                    <a href="#" class="media-left"><img src="assets/images/demo/users/face1.jpg"
+                                                                        class="img-sm img-circle" alt=""></a>
+                                    <div class="media-body">
+                                        <a href="#" class="media-heading text-semibold">James Alexander</a>
+                                        <span class="text-size-mini text-muted display-block">Santa Ana, CA.</span>
+                                    </div>
+                                    <div class="media-right media-middle">
+                                        <span class="status-mark border-success"></span>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <a href="#" class="media-left"><img src="assets/images/demo/users/face2.jpg"
+                                                                        class="img-sm img-circle" alt=""></a>
+                                    <div class="media-body">
+                                        <a href="#" class="media-heading text-semibold">Jeremy Victorino</a>
+                                        <span class="text-size-mini text-muted display-block">Dowagiac, MI.</span>
+                                    </div>
+                                    <div class="media-right media-middle">
+                                        <span class="status-mark border-danger"></span>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <a href="#" class="media-left"><img src="assets/images/demo/users/face3.jpg"
+                                                                        class="img-sm img-circle" alt=""></a>
+                                    <div class="media-body">
+                                        <a href="#" class="media-heading text-semibold">Margo Baker</a>
+                                        <span class="text-size-mini text-muted display-block">Kasaan, AK.</span>
+                                    </div>
+                                    <div class="media-right media-middle">
+                                        <span class="status-mark border-success"></span>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <a href="#" class="media-left"><img src="assets/images/demo/users/face4.jpg"
+                                                                        class="img-sm img-circle" alt=""></a>
+                                    <div class="media-body">
+                                        <a href="#" class="media-heading text-semibold">Beatrix Diaz</a>
+                                        <span class="text-size-mini text-muted display-block">Neenah, WI.</span>
+                                    </div>
+                                    <div class="media-right media-middle">
+                                        <span class="status-mark border-warning"></span>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <a href="#" class="media-left"><img src="assets/images/demo/users/face5.jpg"
+                                                                        class="img-sm img-circle" alt=""></a>
+                                    <div class="media-body">
+                                        <a href="#" class="media-heading text-semibold">Richard Vango</a>
+                                        <span class="text-size-mini text-muted display-block">Grapevine, TX.</span>
+                                    </div>
+                                    <div class="media-right media-middle">
+                                        <span class="status-mark border-grey-400"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /online-users -->
+
+                </div>
+            </div>
+        </div>
+        <!-- /detached sidebar -->
+
+
+        <!-- Detached content -->
+        <div class="container-detached">
+            <div class="content-detached">
+
+                <!-- Tab content -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="apropos">
+
+                        <!-- Daily stats -->
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h6 class="panel-title text-info">Informations Générales</h6>
+                                <div class="heading-elements">
+                                    <a href="#" class="heading-text"><i class="icon-cog text-info"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="panel-body">
+                                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
+                                    mise en page avant impression. Le Lorem Ipsum est le faux texte standard de
+                                    l'imprimerie depuis les années 1500, quand un peintre anonyme assembla
+                                    ensemble des morceaux de texte pour réaliser un livre spécimen de polices de
+                                    texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à
+                                    la bureautique informatique, sans que son contenu n'en soit modifié. Il a
+                                    été popularisé dans les années 1960 grâce à la vente de feuilles Letraset
+                                    contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
+                                    dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                            </div>
+
+                        </div>
+                        <!-- /daily stats -->
+
+
+                        <!-- Share your thoughts -->
+                        <div class="panel panel-flat">
+                            <div class="panel-body">
+                                <form action="#">
+                                    <div class="form-group">
+                                                <textarea name="enter-message" class="form-control mb-15" rows="3"
+                                                          cols="1"
+                                                          placeholder="Qu'est-ce qui préoccupe votre esprit?"></textarea>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <ul class="icons-list icons-list-extended mt-10">
+                                                <li>
+                                                    <a href="#" data-popup="tooltip" title="Add photo"
+                                                       data-container="body"><i class="icon-images2"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" data-popup="tooltip" title="Add video"
+                                                       data-container="body"><i class="icon-film2"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" data-popup="tooltip" title="Add event"
+                                                       data-container="body"><i class="icon-calendar2"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-xs-6 text-right">
+                                            <button type="submit"
+                                                    class="btn btn-primary btn-labeled btn-labeled-right">
+                                                Save <b><i class="icon-circle-right2"></i></b></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /share your thoughts -->
+
+                    </div>
+
+                    <div class="tab-pane fade" id="messages">
+
+                        <!-- My inbox -->
+                        <div class="panel panel-white">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">My Inbox</h6>
+
+                                <div class="heading-elements not-collapsible">
+                                    <span class="label bg-blue heading-text">25 new today</span>
+                                </div>
+                            </div>
+
+                            <div class="panel-toolbar panel-toolbar-inbox">
+                                <div class="navbar navbar-default">
+                                    <ul class="nav navbar-nav visible-xs-block no-border">
+                                        <li>
+                                            <a class="text-center collapsed" data-toggle="collapse"
+                                               data-target="#inbox-toolbar-toggle-multiple">
+                                                <i class="icon-circle-down2"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="navbar-collapse collapse" id="inbox-toolbar-toggle-multiple">
+                                        <div class="btn-group navbar-btn">
+                                            <button type="button"
+                                                    class="btn btn-default btn-icon btn-checkbox-all">
+                                                <input type="checkbox" class="styled">
+                                            </button>
+
+                                            <button type="button"
+                                                    class="btn btn-default btn-icon dropdown-toggle"
+                                                    data-toggle="dropdown">
+                                                <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Select all</a></li>
+                                                <li><a href="#">Select read</a></li>
+                                                <li><a href="#">Select unread</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Clear selection</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="btn-group navbar-btn">
+                                            <button type="button" class="btn btn-default">
+                                                <i class="icon-pencil7"></i>
+                                                <span class="hidden-xs position-right">Compose</span></button>
+                                            <button type="button" class="btn btn-default">
+                                                <i class="icon-bin"></i> <span
+                                                        class="hidden-xs position-right">Delete</span>
+                                            </button>
+                                            <button type="button" class="btn btn-default">
+                                                <i class="icon-spam"></i>
+                                                <span class="hidden-xs position-right">Spam</span></button>
+                                        </div>
+
+                                        <div class="navbar-right">
+                                            <p class="navbar-text"><span class="text-semibold">1-50</span> of
+                                                <span class="text-semibold">528</span></p>
+
+                                            <div class="btn-group navbar-left navbar-btn">
+                                                <button type="button" class="btn btn-default btn-icon disabled">
+                                                    <i class="icon-arrow-left12"></i></button>
+                                                <button type="button" class="btn btn-default btn-icon">
+                                                    <i class="icon-arrow-right13"></i></button>
+                                            </div>
+
+                                            <div class="btn-group navbar-btn">
+                                                <button type="button" class="btn btn-default dropdown-toggle"
+                                                        data-toggle="dropdown">
+                                                    <i class="icon-cog3"></i>
+                                                    <span class="caret"></span>
+                                                </button>
+
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a href="#">Action</a></li>
+                                                    <li><a href="#">Another action</a></li>
+                                                    <li><a href="#">Something else here</a></li>
+                                                    <li><a href="#">One more line</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-inbox table-lg">
+                                    <tbody data-link="row" class="rowlink">
+                                    <tr class="unread">
+                                        <td class="table-inbox-checkbox rowlink-skip">
+                                            <input type="checkbox" class="styled">
+                                        </td>
+                                        <td class="table-inbox-star rowlink-skip">
+                                            <a href="mail_read.html">
+                                                <i class="icon-star-empty3 text-muted"></i>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-image">
+                                            <img src="assets/images/brands/spotify.png"
+                                                 class="img-circle img-xs" alt="">
+                                        </td>
+                                        <td class="table-inbox-name">
+                                            <a href="#">
+                                                <div class="letter-icon-title text-default">Spotify</div>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-message">
+                                            <div class="table-inbox-subject">On Tower-hill, as you go down</div>
+                                            <span class="table-inbox-preview">To the London docks, you may have seen a crippled beggar (or KEDGER, as the sailors say) holding a painted board before him, representing the tragic scene in which he lost his leg</span>
+                                        </td>
+                                        <td class="table-inbox-attachment">
+                                            <i class="icon-attachment text-muted"></i>
+                                        </td>
+                                        <td class="table-inbox-time">
+                                            11:09 pm
+                                        </td>
+                                    </tr>
+
+                                    <tr class="unread">
+                                        <td class="table-inbox-checkbox rowlink-skip">
+                                            <input type="checkbox" class="styled">
+                                        </td>
+                                        <td class="table-inbox-star rowlink-skip">
+                                            <a href="mail_read.html">
+                                                <i class="icon-star-empty3 text-muted"></i>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-image">
+															<span class="btn bg-warning-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</span>
+                                        </td>
+                                        <td class="table-inbox-name">
+                                            <a href="#">
+                                                <div class="letter-icon-title text-default">James Alexander
+                                                </div>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-message">
+                                            <div class="table-inbox-subject">
+                                                <span class="label bg-success position-left">Promo</span> There
+                                                are
+                                                three
+                                                whales
+                                                and
+                                                three
+                                                boats
+                                            </div>
+                                            <span class="table-inbox-preview">And one of the boats (presumed to contain the missing leg in all its original integrity) is being crunched by the jaws of the foremost whale</span>
+                                        </td>
+                                        <td class="table-inbox-attachment">
+                                            <i class="icon-attachment text-muted"></i>
+                                        </td>
+                                        <td class="table-inbox-time">
+                                            10:21 pm
+                                        </td>
+                                    </tr>
+
+                                    <tr class="unread">
+                                        <td class="table-inbox-checkbox rowlink-skip">
+                                            <input type="checkbox" class="styled">
+                                        </td>
+                                        <td class="table-inbox-star rowlink-skip">
+                                            <a href="mail_read.html">
+                                                <i class="icon-star-full2 text-warning-300"></i>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-image">
+                                            <img src="assets/images/demo/users/face2.jpg"
+                                                 class="img-circle img-xs" alt="">
+                                        </td>
+                                        <td class="table-inbox-name">
+                                            <a href="#">
+                                                <div class="letter-icon-title text-default">Nathan Jacobson
+                                                </div>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-message">
+                                            <div class="table-inbox-subject">Any time these ten years, they tell
+                                                me, has that man held up
+                                            </div>
+                                            <span class="table-inbox-preview">That picture, and exhibited that stump to an incredulous world. But the time of his justification has now come. His three whales are as good whales as were ever published in Wapping, at any rate; and his stump</span>
+                                        </td>
+                                        <td class="table-inbox-attachment"></td>
+                                        <td class="table-inbox-time">
+                                            8:37 pm
+                                        </td>
+                                    </tr>
+
+                                    <tr class="unread">
+                                        <td class="table-inbox-checkbox rowlink-skip">
+                                            <input type="checkbox" class="styled">
+                                        </td>
+                                        <td class="table-inbox-star rowlink-skip">
+                                            <a href="mail_read.html">
+                                                <i class="icon-star-full2 text-warning-300"></i>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-image">
+															<span class="btn bg-indigo-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</span>
+                                        </td>
+                                        <td class="table-inbox-name">
+                                            <a href="#">
+                                                <div class="letter-icon-title text-default">Margo Baker</div>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-message">
+                                            <div class="table-inbox-subject">Throughout the Pacific, and also in
+                                                Nantucket, and New Bedford
+                                            </div>
+                                            <span class="table-inbox-preview">and Sag Harbor, you will come across lively sketches of whales and whaling-scenes, graven by the fishermen themselves on Sperm Whale-teeth, or ladies' busks wrought out of the Right Whale-bone</span>
+                                        </td>
+                                        <td class="table-inbox-attachment"></td>
+                                        <td class="table-inbox-time">
+                                            4:28 am
+                                        </td>
+                                    </tr>
+
+                                    <tr class="unread">
+                                        <td class="table-inbox-checkbox rowlink-skip">
+                                            <input type="checkbox" class="styled">
+                                        </td>
+                                        <td class="table-inbox-star rowlink-skip">
+                                            <a href="mail_read.html">
+                                                <i class="icon-star-empty3 text-muted"></i>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-image">
+                                            <img src="assets/images/brands/dribbble.png"
+                                                 class="img-circle img-xs" alt="">
+                                        </td>
+                                        <td class="table-inbox-name">
+                                            <a href="#">
+                                                <div class="letter-icon-title text-default">Dribbble</div>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-message">
+                                            <div class="table-inbox-subject">The whalemen call the numerous
+                                                little ingenious contrivances
+                                            </div>
+                                            <span class="table-inbox-preview">They elaborately carve out of the rough material, in their hours of ocean leisure. Some of them have little boxes of dentistical-looking implements</span>
+                                        </td>
+                                        <td class="table-inbox-attachment"></td>
+                                        <td class="table-inbox-time">
+                                            Dec 5
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="table-inbox-checkbox rowlink-skip">
+                                            <input type="checkbox" class="styled">
+                                        </td>
+                                        <td class="table-inbox-star rowlink-skip">
+                                            <a href="mail_read.html">
+                                                <i class="icon-star-empty3 text-muted"></i>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-image">
+															<span class="btn bg-brown-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</span>
+                                        </td>
+                                        <td class="table-inbox-name">
+                                            <a href="#">
+                                                <div class="letter-icon-title text-default">Hanna Dorman</div>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-message">
+                                            <div class="table-inbox-subject">Some of them have little boxes of
+                                                dentistical-looking implements
+                                            </div>
+                                            <span class="table-inbox-preview">Specially intended for the skrimshandering business. But, in general, they toil with their jack-knives alone; and, with that almost omnipotent tool of the sailor</span>
+                                        </td>
+                                        <td class="table-inbox-attachment">
+                                            <i class="icon-attachment text-muted"></i>
+                                        </td>
+                                        <td class="table-inbox-time">
+                                            Dec 5
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="table-inbox-checkbox rowlink-skip">
+                                            <input type="checkbox" class="styled">
+                                        </td>
+                                        <td class="table-inbox-star rowlink-skip">
+                                            <a href="mail_read.html">
+                                                <i class="icon-star-empty3 text-muted"></i>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-image">
+                                            <img src="assets/images/brands/twitter.png"
+                                                 class="img-circle img-xs" alt="">
+                                        </td>
+                                        <td class="table-inbox-name">
+                                            <a href="#">
+                                                <div class="letter-icon-title text-default">Twitter</div>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-message">
+                                            <div class="table-inbox-subject">
+                                                <span class="label bg-indigo-400 position-left">Order</span>
+                                                Long exile from Christendom
+                                            </div>
+                                            <span class="table-inbox-preview">And civilization inevitably restores a man to that condition in which God placed him, i.e. what is called savagery</span>
+                                        </td>
+                                        <td class="table-inbox-attachment"></td>
+                                        <td class="table-inbox-time">
+                                            Dec 4
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="table-inbox-checkbox rowlink-skip">
+                                            <input type="checkbox" class="styled">
+                                        </td>
+                                        <td class="table-inbox-star rowlink-skip">
+                                            <a href="mail_read.html">
+                                                <i class="icon-star-full2 text-warning-300"></i>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-image">
+															<span class="btn bg-pink-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</span>
+                                        </td>
+                                        <td class="table-inbox-name">
+                                            <a href="#">
+                                                <div class="letter-icon-title text-default">Vanessa Aurelius
+                                                </div>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-message">
+                                            <div class="table-inbox-subject">Your true whale-hunter is as much a
+                                                savage as an Iroquois
+                                            </div>
+                                            <span class="table-inbox-preview">I myself am a savage, owning no allegiance but to the King of the Cannibals; and ready at any moment to rebel against him. Now, one of the peculiar characteristics of the savage in his domestic hours</span>
+                                        </td>
+                                        <td class="table-inbox-attachment">
+                                            <i class="icon-attachment text-muted"></i>
+                                        </td>
+                                        <td class="table-inbox-time">
+                                            Dec 4
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="table-inbox-checkbox rowlink-skip">
+                                            <input type="checkbox" class="styled">
+                                        </td>
+                                        <td class="table-inbox-star rowlink-skip">
+                                            <a href="mail_read.html">
+                                                <i class="icon-star-empty3 text-muted"></i>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-image">
+                                            <img src="assets/images/demo/users/face8.jpg"
+                                                 class="img-circle img-xs" alt="">
+                                        </td>
+                                        <td class="table-inbox-name">
+                                            <a href="#">
+                                                <div class="letter-icon-title text-default">William Brenson
+                                                </div>
+                                            </a>
+                                        </td>
+                                        <td class="table-inbox-message">
+                                            <div class="table-inbox-subject">An ancient Hawaiian war-club or
+                                                spear-paddle
+                                            </div>
+                                            <span class="table-inbox-preview">In its full multiplicity and elaboration of carving, is as great a trophy of human perseverance as a Latin lexicon. For, with but a bit of broken sea-shell or a shark's tooth</span>
+                                        </td>
+                                        <td class="table-inbox-attachment">
+                                            <i class="icon-attachment text-muted"></i>
+                                        </td>
+                                        <td class="table-inbox-time">
+                                            Dec 4
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /my inbox -->
+
+                    </div>
+
+                    <div class="tab-pane fade" id="settings">
+
+                        <!-- Profile info -->
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Profile information</h6>
+                                <div class="heading-elements">
+                                    <ul class="icons-list">
+                                        <li><a data-action="collapse"></a></li>
+                                        <li><a data-action="reload"></a></li>
+                                        <li><a data-action="close"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="panel-body">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Username</label>
+                                                <input type="text" value="Eugene" class="form-control">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Full name</label>
+                                                <input type="text" value="Kopyov" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Address line 1</label>
+                                                <input type="text" value="Ring street 12" class="form-control">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Address line 2</label>
+                                                <input type="text" value="building D, flat #67"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>City</label>
+                                                <input type="text" value="Munich" class="form-control">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>State/Province</label>
+                                                <input type="text" value="Bayern" class="form-control">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>ZIP code</label>
+                                                <input type="text" value="1031" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                                <input type="text" readonly="readonly" value="eugene@kopyov.com"
+                                                       class="form-control">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Your country</label>
+                                                <select class="select">
+                                                    <option value="germany" selected="selected">Germany</option>
+                                                    <option value="france">France</option>
+                                                    <option value="spain">Spain</option>
+                                                    <option value="netherlands">Netherlands</option>
+                                                    <option value="other">...</option>
+                                                    <option value="uk">United Kingdom</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone #</label>
+                                                <input type="text" value="+99-99-9999-9999"
+                                                       class="form-control">
+                                                <span class="help-block">+99-99-9999-9999</span>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="display-block">Upload profile image</label>
+                                                <input type="file" class="file-styled">
+                                                <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary">Save
+                                            <i class="icon-arrow-right14 position-right"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /profile info -->
+
+
+                        <!-- Account settings -->
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Account settings</h6>
+                                <div class="heading-elements">
+                                    <ul class="icons-list">
+                                        <li><a data-action="collapse"></a></li>
+                                        <li><a data-action="reload"></a></li>
+                                        <li><a data-action="close"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="panel-body">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Username</label>
+                                                <input type="text" value="Kopyov" readonly="readonly"
+                                                       class="form-control">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label>Current password</label>
+                                                <input type="password" value="password" readonly="readonly"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>New password</label>
+                                                <input type="password" placeholder="Enter new password"
+                                                       class="form-control">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label>Repeat password</label>
+                                                <input type="password" placeholder="Repeat new password"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Profile visibility</label>
+
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="visibility" class="styled"
+                                                               checked="checked">
+                                                        Visible to everyone
+                                                    </label>
+                                                </div>
+
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="visibility" class="styled">
+                                                        Visible to friends only
+                                                    </label>
+                                                </div>
+
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="visibility" class="styled">
+                                                        Visible to my connections only
+                                                    </label>
+                                                </div>
+
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="visibility" class="styled">
+                                                        Visible to my colleagues only
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label>Notifications</label>
+
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" class="styled" checked="checked">
+                                                        Password expiration notification
+                                                    </label>
+                                                </div>
+
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" class="styled" checked="checked">
+                                                        New message notification
+                                                    </label>
+                                                </div>
+
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" class="styled" checked="checked">
+                                                        New task notification
+                                                    </label>
+                                                </div>
+
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" class="styled">
+                                                        New contact request notification
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary">Save
+                                            <i class="icon-arrow-right14 position-right"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /account settings -->
+
+                    </div>
+                </div>
+                <!-- /tab content -->
+
+            </div>
+        </div>
+        <!-- /detached content -->
+    </div>
+    <!-- /content area -->
+{% endblock %}

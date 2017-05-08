@@ -1,20 +1,26 @@
+
 user:
     resource: "@UserBundle/Controller/"
     type:     annotation
     prefix:   /
 
 user_cadidat_registration:
-    path:  /register/user-candidat
-    defaults: { _controller: UserBundle:RegistrationUserCandidat:register }
+    path:  /candidat/register
+    defaults: { _controller: UserBundle:RegistrationUser:registerCandidat }
 
 user_recruteur_registration:
-    path:  /register/user-recruteur
-    defaults: { _controller: UserBundle:RegistrationUserRecruteur:register }
+    path:  /recruteur/register
+    defaults: { _controller: UserBundle:RegistrationUser:registerRecruteur }
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+    prefix:   /
 
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+admin:
+    resource: "@AdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin

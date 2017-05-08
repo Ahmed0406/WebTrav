@@ -1,0 +1,12 @@
+{% extends "@Admin/base.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="">
+            Hello {{ user.username }}!
+            <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+        </div>
+    </div>
+{% endblock %}
