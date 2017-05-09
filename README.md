@@ -1,4 +1,7 @@
-.checkout
+Installation du Project
 =========
 
-A Symfony project created on May 2, 2017, 4:44 am.
+1) installer les librerie
+
+
+composer install
