@@ -16,7 +16,7 @@
 </head>
 
 <body class="login-container">
-{% if app.request.hasPreviousSession %}
+{#{% if app.request.hasPreviousSession %}
     {% for type, messages in app.session.flashbag.all() %}
         {% for message in messages %}
             <div class="row">
@@ -30,7 +30,7 @@
             </div>
         {% endfor %}
     {% endfor %}
-{% endif %}
+{% endif %}#}
 
 <div>
     <!-- Page container -->

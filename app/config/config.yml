@@ -84,7 +84,7 @@ fos_user:
         form:
             type: UserBundle\Form\RegistrationType
         confirmation:
-            enabled: false
+            enabled: true
 
     resetting:
             email:

@@ -47,11 +47,11 @@
                 </li>
             {% else %}
             <li>
-                <a href="#"> <i class="icon-man position-left"></i> Espace Candidat </a>
+                <a href="{{ path('fos_user_profile_show') }}"> <i class="icon-man position-left"></i> Espace Candidat </a>
             </li>
 
             <li>
-                <a href="#"> <i class="icon-reading position-left"></i> Espace Recruteur </a>
+                <a href="{{ path('fos_user_profile_show') }}"> <i class="icon-reading position-left"></i> Espace Recruteur </a>
             </li>
             {% endif %}
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
