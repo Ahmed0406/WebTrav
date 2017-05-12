@@ -3,7 +3,6 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@UserBundle/Resources/config/services.yml" }
-    - { resource: "@AdminBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -109,3 +108,18 @@ pugx_multi_user:
                 form:
                     type: UserBundle\Form\Type\RegistrationUserRecruteurFormType
                     name: app_user_recruteur_registration
+
+easy_admin:
+    design:
+        menu:
+            - label: 'User'
+              icon: 'users'
+              children:
+                - { label: 'Candidat', icon: 'user', entity: 'UserCandidat' }
+                - { label: 'Recruteur', icon: 'user', entity: 'UserRecruteur' }
+    site_name: 'ADMIN <em style="font-size: 80%;">Dashboard</em>'
+    entities:
+        UserCandidat:
+            class: UserBundle\Entity\UserCandidat
+        UserRecruteur:
+            class: UserBundle\Entity\UserRecruteur

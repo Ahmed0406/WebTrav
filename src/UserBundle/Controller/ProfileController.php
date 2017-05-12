@@ -29,13 +29,15 @@ class ProfileController extends BaseController
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
-        else
-            if ($user->hasRole('ROLE_CANDIDAT')){
-                $parent_template_var = 'profile/profil-candidat.html.twig' ;
-            }
-            elseif ($user->hasRole( 'ROLE_RECRUTEUR')){
-                $parent_template_var = 'profile/profil-recuteur.html.twig' ;
-            }
+
+        if ($user->hasRole('ROLE_CANDIDAT')) {
+            $parent_template_var = 'profile/profil-candidat.html.twig';
+        } elseif ($user->hasRole('ROLE_RECRUTEUR')) {
+            $parent_template_var = 'profile/profil-recuteur.html.twig';
+        } else {
+            return $this->redirectToRoute('admin');
+        }
+
         return $this->render(':profile:profile.html.twig', array(
             'user' => $user,
             'parent_template_var' => $parent_template_var,

@@ -20,7 +20,7 @@ app:
     type: annotation
     prefix:   /
 
-admin:
-    resource: "@AdminBundle/Controller/"
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/AdminController.php"
     type:     annotation
     prefix:   /admin
