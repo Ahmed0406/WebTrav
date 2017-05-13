@@ -20,7 +20,7 @@
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
-<body class="navbar-top">
+<body class="navbar-top {% block body_class %}{% endblock %}">
 
 <!-- Main navbar -->
 <div class="navbar navbar-inverse navbar-sha bg-teal-400 navbar-fixed-top">

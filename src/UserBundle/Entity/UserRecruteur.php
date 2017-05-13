@@ -20,10 +20,186 @@ class UserRecruteur extends User
      */
     protected $id;
 
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $address1;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $address2;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $city;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $state;
+
+    /**
+     * @var integer
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $zipcode;
+
+    /**
+     * @var integer
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $phone;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $image;
+
+
     public function __construct()
     {
         parent::__construct();
-        // your own logic
         $this->roles = array('ROLE_RECRUTEUR');
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress1()
+    {
+        return $this->address1;
+    }
+
+    /**
+     * @param string $address1
+     */
+    public function setAddress1(string $address1)
+    {
+        $this->address1 = $address1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress2()
+    {
+        return $this->address2;
+    }
+
+    /**
+     * @param string $address2
+     */
+    public function setAddress2(string $address2)
+    {
+        $this->address2 = $address2;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param string $city
+     */
+    public function setCity(string $city)
+    {
+        $this->city = $city;
+    }
+
+    /**
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * @param string $state
+     */
+    public function setState(string $state)
+    {
+        $this->state = $state;
+    }
+
+    /**
+     * @return int
+     */
+    public function getZipcode()
+    {
+        return $this->zipcode;
+    }
+
+    /**
+     * @param int $zipcode
+     */
+    public function setZipcode(int $zipcode)
+    {
+        $this->zipcode = $zipcode;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param int $phone
+     */
+    public function setPhone(int $phone)
+    {
+        $this->phone = $phone;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage(string $image)
+    {
+        $this->image = $image;
     }
 }

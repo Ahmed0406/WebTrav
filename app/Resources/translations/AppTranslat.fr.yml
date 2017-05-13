@@ -1,0 +1,25 @@
+recruteur:
+    setting:
+        panel-info:
+            title: 'Profile information'
+            username: 'Username'
+            name: 'Nom complet'
+            address1: 'Address 1'
+            address2: 'Address 2'
+            city: 'Ville'
+            state: 'État / Province'
+            zip-code: 'ZIP code'
+            email: 'Email'
+            country: 'Pays'
+            phone: 'Téléphone'
+            image: 'Télécharger l''image de profil'
+            image-desc: 'Formats acceptés: gif, png, jpg. Max file size 2Mb'
+            submit: 'Sauvegarder'
+
+        panel-settings:
+            title: 'Account settings'
+            username: 'Username'
+            password-old: 'Mot de passe actuel'
+            password-new: 'Nouveau mot de passe'
+            password-repeat: 'Répéter le nouveau mot de passe'
+            submit: 'Sauvegarder'
