@@ -77,7 +77,7 @@ class ChangePasswordController extends Controller
 
         }
 
-        return $this->render(':profile/recruteur_Fn:change_password.html.twig', array(
+        return $this->render(':profile/recruteur_Fn/settings:change_password.html.twig', array(
             'user' => $user,
             'form' => $form->createView(),
         ));

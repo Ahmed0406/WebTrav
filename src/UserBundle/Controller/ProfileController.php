@@ -16,6 +16,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Controller\RegistrationController as BaseController;
+use UserBundle\Entity\UserRecruteur;
+use UserBundle\Form\UserRecruteurType;
 
 class ProfileController extends BaseController
 {
@@ -68,34 +70,27 @@ class ProfileController extends BaseController
             return $event->getResponse();
         }
 
-        /** @var $formFactory FactoryInterface */
-        $formFactory = $this->get('fos_user.profile.form.factory');
 
-        $form = $formFactory->createForm();
+        $form = $this->createForm(UserRecruteurType::class);
         $form->setData($user);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var $userManager UserManagerInterface */
-            $userManager = $this->get('fos_user.user_manager');
-
-            $event = new FormEvent($form, $request);
-            $dispatcher->dispatch(FOSUserEvents::PROFILE_EDIT_SUCCESS, $event);
-
-            $userManager->updateUser($user);
+            $em= $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
 
             if (null === $response = $event->getResponse()) {
                 $url = $this->generateUrl('fos_user_profile_show');
                 $response = new RedirectResponse($url);
             }
 
-            $dispatcher->dispatch(FOSUserEvents::PROFILE_EDIT_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
-
             return $response;
         }
 
-        return $this->render('@FOSUser/Profile/edit.html.twig', array(
+        return $this->render('profile/recruteur_Fn/settings/info.html.twig', array(
+            'user' => $user,
             'form' => $form->createView(),
         ));
     }
