@@ -123,3 +123,12 @@ easy_admin:
             class: UserBundle\Entity\UserCandidat
         UserRecruteur:
             class: UserBundle\Entity\UserRecruteur
+
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        uploads_image:
+            uri_prefix:         /uploads/images
+            upload_destination: '%kernel.root_dir%/../web/uploads/images'
+            namer:              vich_uploader.namer_uniqid

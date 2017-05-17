@@ -63,8 +63,9 @@ class UserRecruteur extends User
     private $phone;
 
     /**
-     * @var string
-     * @ORM\Column(type="string", nullable=true)
+     * @var Image
+     *
+     * @ORM\OneToOne(targetEntity="Image",cascade={"persist"})
      */
     private $image;
 
@@ -86,7 +87,7 @@ class UserRecruteur extends User
     /**
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->name = $name;
     }
@@ -102,7 +103,7 @@ class UserRecruteur extends User
     /**
      * @param string $address1
      */
-    public function setAddress1(string $address1)
+    public function setAddress1($address1)
     {
         $this->address1 = $address1;
     }
@@ -118,7 +119,7 @@ class UserRecruteur extends User
     /**
      * @param string $address2
      */
-    public function setAddress2(string $address2)
+    public function setAddress2($address2)
     {
         $this->address2 = $address2;
     }
@@ -134,7 +135,7 @@ class UserRecruteur extends User
     /**
      * @param string $city
      */
-    public function setCity(string $city)
+    public function setCity($city)
     {
         $this->city = $city;
     }
@@ -150,7 +151,7 @@ class UserRecruteur extends User
     /**
      * @param string $state
      */
-    public function setState(string $state)
+    public function setState($state)
     {
         $this->state = $state;
     }
@@ -166,7 +167,7 @@ class UserRecruteur extends User
     /**
      * @param int $zipcode
      */
-    public function setZipcode(int $zipcode)
+    public function setZipcode($zipcode)
     {
         $this->zipcode = $zipcode;
     }
@@ -182,24 +183,32 @@ class UserRecruteur extends User
     /**
      * @param int $phone
      */
-    public function setPhone(int $phone)
+    public function setPhone($phone)
     {
         $this->phone = $phone;
     }
 
     /**
-     * @return string
+     * Set image
+     *
+     * @param \UserBundle\Entity\Image $image
+     *
+     * @return UserRecruteur
+     */
+    public function setImage(\UserBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \UserBundle\Entity\Image
      */
     public function getImage()
     {
         return $this->image;
-    }
-
-    /**
-     * @param string $image
-     */
-    public function setImage(string $image)
-    {
-        $this->image = $image;
     }
 }

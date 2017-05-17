@@ -1,6 +1,7 @@
 {% trans_default_domain 'AppTranslat' %}
 {{ form_start(form, { 'action': path('fos_user_profile_edit') }) }}
 
+{{ dump() }}
 <div class="form-group">
     <div class="row">
         <div class="col-md-6">
@@ -68,19 +69,9 @@
         </div>
 
         <div class="col-md-6">
-            <div class="row">
-                <div class="col-lg-8">
-                    <label class="display-block">{{ 'recruteur.setting.panel-info.image'|trans }}</label>
-                    <input type="file" class="file-styled">
-                    <span class="help-block">{{ 'recruteur.setting.panel-info.image-desc'|trans }}</span>
-                </div>
-                <div class="col-lg-4">
-                    <img class="img-circle img-responsive" style="width: 90px; height: 90px;"
-                         src="{{ asset( user.image ) }}" alt="">
-
-                </div>
-            </div>
-
+            <label class="display-block">{{ 'recruteur.setting.panel-info.image'|trans }}</label>
+            {{ form_widget(form.image) }}
+            <span class="help-block">{{ 'recruteur.setting.panel-info.image-desc'|trans }}</span>
         </div>
     </div>
 </div>

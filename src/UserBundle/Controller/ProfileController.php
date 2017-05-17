@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Controller\RegistrationController as BaseController;
+use UserBundle\Entity\Image;
 use UserBundle\Entity\UserRecruteur;
 use UserBundle\Form\UserRecruteurType;
 
