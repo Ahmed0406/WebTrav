@@ -59,7 +59,7 @@
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 <li class="dropdown dropdown-user dropdown-user1 ">
                     <a class="dropdown-toggle " data-toggle="dropdown">
-                        {% if not vich_uploader_asset(user.image, 'imageFile') %}
+                        {% if ( (not user.image) or (not vich_uploader_asset(user.image, 'imageFile')) ) %}
                             <img src="{{ asset('images/man.png') }}" alt=""> <i class="caret"></i>
                         {% else %}
                             <img src="{{ vich_uploader_asset(user.image, 'imageFile') }}" alt=""

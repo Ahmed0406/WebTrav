@@ -22,7 +22,7 @@
                             </div>
 
                             <a href="#" class="display-inline-block content-group-sm">
-                                {% if not vich_uploader_asset(user.image, 'imageFile')  %}
+                                {% if ( (not user.image) or (not vich_uploader_asset(user.image, 'imageFile')) )  %}
                                 <img src="{{ asset('images/man.png')}}" class="img-circle img-responsive"
                                      alt="" style="width: 150px;">
                                 {% else %}
