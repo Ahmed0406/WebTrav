@@ -46,27 +46,36 @@
                     <a href="#"> <i class="icon-reading position-left"></i> Recherche </a>
                 </li>
             {% else %}
-            <li>
-                <a href="{{ path('fos_user_profile_show') }}"> <i class="icon-man position-left"></i> Espace Candidat </a>
-            </li>
+                <li>
+                    <a href="{{ path('fos_user_profile_show') }}"> <i class="icon-man position-left"></i> Espace
+                        Candidat </a>
+                </li>
 
-            <li>
-                <a href="{{ path('fos_user_profile_show') }}"> <i class="icon-reading position-left"></i> Espace Recruteur </a>
-            </li>
+                <li>
+                    <a href="{{ path('fos_user_profile_show') }}"> <i class="icon-reading position-left"></i> Espace
+                        Recruteur </a>
+                </li>
             {% endif %}
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <li class="dropdown dropdown-user dropdown-user1 dropdown-user-logo">
-                <a class="dropdown-toggle " data-toggle="dropdown">
-                    <img src="{{ asset('images/demo/users/face2.jpg') }}" alt=""> <i class="caret"></i> </a>
-
-                <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="{{ path('fos_user_profile_show') }}"><i class="icon-user-plus"></i> Mon profil</a></li>
-                    <li><a href="#"><span class="badge badge-warning pull-right">0</span>
-                            <i class="icon-comment-discussion"></i> Messages</a></li>
-                    <li class="divider"></li>
-                    <li><a href="{{ path('fos_user_security_logout') }}"><i class="icon-switch2"></i> Se déconnecter</a></li>
-                </ul>
-            </li>
+                <li class="dropdown dropdown-user dropdown-user1 ">
+                    <a class="dropdown-toggle " data-toggle="dropdown">
+                        {% if not vich_uploader_asset(user.image, 'imageFile') %}
+                            <img src="{{ asset('images/man.png') }}" alt=""> <i class="caret"></i>
+                        {% else %}
+                            <img src="{{ vich_uploader_asset(user.image, 'imageFile') }}" alt=""
+                            style="height: 35px!important; width: 30px!important;"> <i class="caret"></i>
+                        {% endif %}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="{{ path('fos_user_profile_show') }}"><i class="icon-user-plus"></i> Mon profil</a>
+                        </li>
+                        <li><a href="#"><span class="badge badge-warning pull-right">0</span>
+                                <i class="icon-comment-discussion"></i> Messages</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}"><i class="icon-switch2"></i> Se déconnecter</a>
+                        </li>
+                    </ul>
+                </li>
             {% endif %}
         </ul>
     </div>
@@ -93,6 +102,7 @@
 
 <!-- Footer -->
 <div>
+    {% if not is_granted("IS_AUTHENTICATED_REMEMBERED") %}
     <div class="subscribe">
         <div class="container">
             <div class="row">
@@ -104,12 +114,13 @@
                     </div>
 
                     <div class="col-md-2 col-sm-2">
-                        <a href="#"> <img src="images/Subscribe.png" alt=""> </a>
+                        <a href="#"> <img src="{{ asset('images/Subscribe.png') }}" alt=""> </a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    {% endif %}
 
     <div id="content-footer">
         <div class="container">

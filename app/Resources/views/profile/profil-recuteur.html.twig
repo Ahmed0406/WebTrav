@@ -22,8 +22,13 @@
                             </div>
 
                             <a href="#" class="display-inline-block content-group-sm">
-                                <img src="{{ vich_uploader_asset(user.image, 'imageFile') }}" class="img-circle img-responsive"
-                                     alt="" style="width: 110px; height: 110px;">
+                                {% if not vich_uploader_asset(user.image, 'imageFile')  %}
+                                <img src="{{ asset('images/man.png')}}" class="img-circle img-responsive"
+                                     alt="" style="width: 150px;">
+                                {% else %}
+                                    <img src="{{ vich_uploader_asset(user.image, 'imageFile') }}" class="img-circle img-responsive"
+                                         alt="" style="width: 110px; height: 110px;">
+                                {% endif %}
                             </a>
 
                             <ul class="list-inline list-inline-condensed no-margin-bottom">
@@ -74,7 +79,7 @@
                         <div class="category-content">
                             <ul class="media-list">
                                 <li class="media">
-                                    <a href="#" class="media-left"><img src="images/demo/users/face1.jpg"
+                                    <a href="#" class="media-left"><img src="{{ asset('images/demo/users/face1.jpg') }}"
                                                                         class="img-sm img-circle" alt=""></a>
                                     <div class="media-body">
                                         <a href="#" class="media-heading text-semibold">James Alexander</a>
@@ -82,54 +87,6 @@
                                     </div>
                                     <div class="media-right media-middle">
                                         <span class="status-mark border-success"></span>
-                                    </div>
-                                </li>
-
-                                <li class="media">
-                                    <a href="#" class="media-left"><img src="images/demo/users/face2.jpg"
-                                                                        class="img-sm img-circle" alt=""></a>
-                                    <div class="media-body">
-                                        <a href="#" class="media-heading text-semibold">Jeremy Victorino</a>
-                                        <span class="text-size-mini text-muted display-block">Dowagiac, MI.</span>
-                                    </div>
-                                    <div class="media-right media-middle">
-                                        <span class="status-mark border-danger"></span>
-                                    </div>
-                                </li>
-
-                                <li class="media">
-                                    <a href="#" class="media-left"><img src="images/demo/users/face3.jpg"
-                                                                        class="img-sm img-circle" alt=""></a>
-                                    <div class="media-body">
-                                        <a href="#" class="media-heading text-semibold">Margo Baker</a>
-                                        <span class="text-size-mini text-muted display-block">Kasaan, AK.</span>
-                                    </div>
-                                    <div class="media-right media-middle">
-                                        <span class="status-mark border-success"></span>
-                                    </div>
-                                </li>
-
-                                <li class="media">
-                                    <a href="#" class="media-left"><img src="images/demo/users/face4.jpg"
-                                                                        class="img-sm img-circle" alt=""></a>
-                                    <div class="media-body">
-                                        <a href="#" class="media-heading text-semibold">Beatrix Diaz</a>
-                                        <span class="text-size-mini text-muted display-block">Neenah, WI.</span>
-                                    </div>
-                                    <div class="media-right media-middle">
-                                        <span class="status-mark border-warning"></span>
-                                    </div>
-                                </li>
-
-                                <li class="media">
-                                    <a href="#" class="media-left"><img src="images/demo/users/face5.jpg"
-                                                                        class="img-sm img-circle" alt=""></a>
-                                    <div class="media-body">
-                                        <a href="#" class="media-heading text-semibold">Richard Vango</a>
-                                        <span class="text-size-mini text-muted display-block">Grapevine, TX.</span>
-                                    </div>
-                                    <div class="media-right media-middle">
-                                        <span class="status-mark border-grey-400"></span>
                                     </div>
                                 </li>
                             </ul>
