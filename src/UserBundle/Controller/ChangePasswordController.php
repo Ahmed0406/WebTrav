@@ -74,7 +74,7 @@ class ChangePasswordController extends Controller
             }
 
             $dispatcher->dispatch(FOSUserEvents::CHANGE_PASSWORD_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
-
+            return $response;
         }
 
         return $this->render(':profile/recruteur_Fn/settings:change_password.html.twig', array(
