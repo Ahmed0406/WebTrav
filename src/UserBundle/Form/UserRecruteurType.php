@@ -3,12 +3,10 @@
 namespace UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class UserRecruteurType extends AbstractType
 {
@@ -25,7 +23,7 @@ class UserRecruteurType extends AbstractType
             ->add('state',TextType::class)
             ->add('zipcode',NumberType::class)
             ->add('phone',NumberType::class)
-            ->add('image',UserType::class);
+            ->add('image',ImageType::class);
     }
 
     /**
