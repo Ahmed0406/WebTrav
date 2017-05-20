@@ -10,9 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="type", type="string")
- * @ORM\DiscriminatorMap({"user_candidat" = "UserCandidat", "user_recruteur" = "UserRecruteur"})
+ * @ORM\DiscriminatorMap({"user"="User","user_candidat" = "UserCandidat", "user_recruteur" = "UserRecruteur"})
  */
-abstract class User extends BaseUser
+class User extends BaseUser
 {
     /**
      * @ORM\Id
@@ -20,4 +20,36 @@ abstract class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @var Image
+     *
+     * @ORM\OneToOne(targetEntity="Image",cascade={"persist"})
+     */
+    private $image;
+
+
+    /**
+     * Set image
+     *
+     * @param Image $image
+     *
+     * @return User
+     */
+    public function setImage(Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return Image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 }

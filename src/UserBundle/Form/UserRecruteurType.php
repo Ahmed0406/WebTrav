@@ -25,7 +25,7 @@ class UserRecruteurType extends AbstractType
             ->add('state',TextType::class)
             ->add('zipcode',NumberType::class)
             ->add('phone',NumberType::class)
-            ->add('image',ImageType::class);
+            ->add('image',UserType::class);
     }
 
     /**

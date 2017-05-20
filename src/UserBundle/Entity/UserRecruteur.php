@@ -62,12 +62,7 @@ class UserRecruteur extends User
      */
     private $phone;
 
-    /**
-     * @var Image
-     *
-     * @ORM\OneToOne(targetEntity="Image",cascade={"persist"})
-     */
-    private $image;
+
 
 
     public function __construct()
@@ -188,27 +183,4 @@ class UserRecruteur extends User
         $this->phone = $phone;
     }
 
-    /**
-     * Set image
-     *
-     * @param \UserBundle\Entity\Image $image
-     *
-     * @return UserRecruteur
-     */
-    public function setImage(\UserBundle\Entity\Image $image = null)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return \UserBundle\Entity\Image
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
 }
