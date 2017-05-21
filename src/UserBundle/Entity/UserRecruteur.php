@@ -63,6 +63,15 @@ class UserRecruteur extends User
     private $phone;
 
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Apropos",inversedBy="userRecruteur")
+     * @ORM\JoinTable(name="apropos_recruteur",
+     *     joinColumns={@ORM\JoinColumn(name="recruteur_id",referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="apropos_id",referencedColumnName="id")})
+     */
+    private $apropos;
 
 
     public function __construct()
@@ -181,6 +190,41 @@ class UserRecruteur extends User
     public function setPhone($phone)
     {
         $this->phone = $phone;
+    }
+
+
+    /**
+     * Add apropos
+     *
+     * @param \UserBundle\Entity\Apropos $apropos
+     *
+     * @return UserRecruteur
+     */
+    public function addApropos(\UserBundle\Entity\Apropos $apropos)
+    {
+        $this->apropos[] = $apropos;
+
+        return $this;
+    }
+
+    /**
+     * Remove apropos
+     *
+     * @param \UserBundle\Entity\Apropos $apropos
+     */
+    public function removeApropos(Apropos $apropos)
+    {
+        $this->apropos->removeElement($apropos);
+    }
+
+    /**
+     * Get \Doctrine\Common\Collections\Collection
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getApropos()
+    {
+        return $this->apropos;
     }
 
 }

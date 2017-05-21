@@ -1,0 +1,34 @@
+{{ form_start(form) }}
+{{ dump() }}
+<div class="form-group">
+                <textarea name="enter-message" class="form-control mb-15" rows="3"
+                          cols="1"
+                          placeholder="Qu'est-ce qui préoccupe votre esprit?"></textarea>
+</div>
+
+<div class="row">
+    <div class="col-xs-6">
+        <ul class="icons-list icons-list-extended mt-10">
+            <li>
+                <a href="#" data-popup="tooltip" title="Add photo"
+                   data-container="body"><i class="icon-images2"></i></a>
+            </li>
+            <li>
+                <a href="#" data-popup="tooltip" title="Add video"
+                   data-container="body"><i class="icon-film2"></i></a>
+            </li>
+            <li>
+                <a href="#" data-popup="tooltip" title="Add event"
+                   data-container="body"><i class="icon-calendar2"></i></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-xs-6 text-right">
+        <button type="submit"
+                class="btn btn-primary btn-labeled btn-labeled-right">
+            Save <b><i class="icon-circle-right2"></i></b></button>
+    </div>
+</div>
+{{ form_widget(form) }}
+{{ form_end(form) }}
