@@ -3,21 +3,16 @@
 
 namespace UserBundle\Controller;
 
-use FOS\UserBundle\Event\FilterUserResponseEvent;
-use FOS\UserBundle\Event\FormEvent;
+use FOS\UserBundle\Controller\RegistrationController as BaseController;
 use FOS\UserBundle\Event\GetResponseUserEvent;
-use FOS\UserBundle\Form\Factory\FactoryInterface;
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Model\UserInterface;
-use FOS\UserBundle\Model\UserManagerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use FOS\UserBundle\Controller\RegistrationController as BaseController;
-use UserBundle\Entity\Image;
-use UserBundle\Entity\UserRecruteur;
+use UserBundle\Form\UserCandidatType;
 use UserBundle\Form\UserRecruteurType;
 
 class ProfileController extends BaseController
@@ -67,12 +62,25 @@ class ProfileController extends BaseController
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::PROFILE_EDIT_INITIALIZE, $event);
 
+        $view= '';
         if (null !== $event->getResponse()) {
             return $event->getResponse();
         }
 
+        if ($user->hasRole('ROLE_RECRUTEUR')){
+            $type = UserRecruteurType::class;
+            $view = ':profile/recruteur_Fn/settings/info.html.twig';
+        }
 
-        $form = $this->createForm(UserRecruteurType::class,$user, array(
+        elseif ($user->hasRole('ROLE_CANDIDAT')){
+            $type = UserCandidatType::class;
+            $view = ':profile/candidat_Fn/settings:info.html.twig';
+        }
+        else{
+            $this->redirectToRoute('homepage');
+        }
+
+        $form = $this->createForm($type,$user, array(
             'mode' => 'info',
         ));
         $form->setData($user);
@@ -93,7 +101,7 @@ class ProfileController extends BaseController
         }
 dump($user);
 dump($form);
-        return $this->render('profile/recruteur_Fn/settings/info.html.twig', array(
+        return $this->render($view, array(
             'user' => $user,
             'form' => $form->createView(),
         ));

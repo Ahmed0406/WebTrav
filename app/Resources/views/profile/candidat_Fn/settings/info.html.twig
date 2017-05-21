@@ -1,0 +1,97 @@
+{{ form_start(form, { 'action': path('fos_user_profile_edit') }) }}
+<div class="panel panel-flat">
+    <div class="panel-heading">
+        <h6 class="panel-title">Profile information</h6>
+        <div class="heading-elements">
+            <ul class="icons-list">
+                <li><a data-action="collapse"></a></li>
+                <li><a data-action="reload"></a></li>
+                <li><a data-action="close"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Nom</label>
+                    {{ form_widget(form.nom,{'attr': {'class': 'form-control', 'value': user.nom }}) }}
+                </div>
+                <div class="col-md-6">
+                    <label>Prénom</label>
+                    {{ form_widget(form.prenom,{'attr': {'class': 'form-control', 'value': user.prenom }}) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Address line 1</label>
+                    {{ form_widget(form.address1,{'attr': {'class': 'form-control', 'value': user.address1 }}) }}
+                </div>
+                <div class="col-md-6">
+                    <label>Address line 2</label>
+                    {{ form_widget(form.address2,{'attr': {'class': 'form-control', 'value': user.address2 }}) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    <label>City</label>
+                    {{ form_widget(form.city,{'attr': {'class': 'form-control', 'value': user.city }}) }}
+                </div>
+                <div class="col-md-4">
+                    <label>State/Province</label>
+                    {{ form_widget(form.state,{'attr': {'class': 'form-control', 'value': user.state }}) }}
+                </div>
+                <div class="col-md-4">
+                    <label>ZIP code</label>
+                    {{ form_widget(form.zipcode,{'attr': {'class': 'form-control', 'value': user.zipcode }}) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Email</label>
+                    <input type="text" readonly="readonly" value={{ user.email }} class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label>Your country</label>
+                    <select class="select">
+                        <option value="tunisia" selected="selected">Tunisia
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Phone #</label>
+                    {{ form_widget(form.phone,{'attr': {'class': 'form-control', 'value': user.phone }}) }}
+                    <span class="help-block">+99-99-9999-9999</span>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="display-block">Upload profile image</label>
+                    {{ form_widget(form.image,{'attr': {'class': 'file-styled'}}) }}
+                    <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary">Save
+                <i class="icon-arrow-right14 position-right"></i></button>
+        </div>
+    </div>
+</div>
+{{ form_rest(form) }}
+{{ form_end(form) }}

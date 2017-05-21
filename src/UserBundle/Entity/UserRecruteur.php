@@ -227,4 +227,28 @@ class UserRecruteur extends User
         return $this->apropos;
     }
 
+
+    /**
+     * Add apropo
+     *
+     * @param \UserBundle\Entity\Apropos $apropo
+     *
+     * @return UserRecruteur
+     */
+    public function addApropo(\UserBundle\Entity\Apropos $apropo)
+    {
+        $this->apropos[] = $apropo;
+
+        return $this;
+    }
+
+    /**
+     * Remove apropo
+     *
+     * @param \UserBundle\Entity\Apropos $apropo
+     */
+    public function removeApropo(\UserBundle\Entity\Apropos $apropo)
+    {
+        $this->apropos->removeElement($apropo);
+    }
 }
