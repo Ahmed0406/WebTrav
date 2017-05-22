@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@UserBundle/Resources/config/services.yml" }
+    - { resource: "@AdminBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -108,61 +109,6 @@ pugx_multi_user:
                 form:
                     type: UserBundle\Form\Type\RegistrationUserRecruteurFormType
                     name: app_user_recruteur_registration
-
-easy_admin:
-    design:
-        menu:
-            - label: 'User'
-              icon: 'users'
-              children:
-                - { label: 'Candidat', icon: 'user', entity: 'UserCandidat' }
-                - { label: 'Recruteur', icon: 'user', entity: 'UserRecruteur' }
-    site_name: 'ADMIN <em style="font-size: 80%;">Dashboard</em>'
-    entities:
-        UserCandidat:
-            class: UserBundle\Entity\UserCandidat
-            list:
-                fields: ['nom', 'username', 'email', 'enabled', { property: 'roles'}]
-            form:
-                fields:
-                    - 'nom'
-                    - 'username'
-                    - 'email'
-                    - 'password'
-                    - 'enabled'
-                    - property: 'roles'
-                      label: 'Roles'
-                      type: choice
-                      type_options:
-                          expanded: true
-                          multiple: true
-                          choices: {'Candidat': 'ROLE_CANDIDAT', 'Recruteur': 'ROLE_RECRUTEUR','Administrator': 'ROLE_ADMIN'}
-
-
-
-        UserRecruteur:
-            class: UserBundle\Entity\UserRecruteur
-            list:
-                fields: ['name', 'username', 'email', 'enabled']
-            form:
-                fields:
-                    - 'name'
-                    - 'username'
-                    - 'email'
-                    - 'password'
-                    - 'enabled'
-                    - property: 'roles'
-                      label: 'Roles'
-                      type: choice
-                      type_options:
-                          expanded: true
-                          multiple: true
-                          choices: {'Candidat': 'ROLE_CANDIDAT', 'Recruteur': 'ROLE_RECRUTEUR','Administrator': 'ROLE_ADMIN'}
-
-    list:
-        max_results: 10
-    show:
-        max_results: 10
 
 vich_uploader:
     db_driver: orm
