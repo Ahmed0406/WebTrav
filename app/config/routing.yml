@@ -1,8 +1,11 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+    prefix:   /
 
 user:
     resource: "@UserBundle/Controller/"
     type:     annotation
-    prefix:   /
 
 user_cadidat_registration:
     path:  /candidat/register
@@ -14,11 +17,6 @@ user_recruteur_registration:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
-    prefix:   /
 
 easy_admin_bundle:
     resource: "@EasyAdminBundle/Controller/AdminController.php"
