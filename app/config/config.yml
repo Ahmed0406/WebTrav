@@ -94,6 +94,10 @@ fos_user:
 
 pugx_multi_user:
     users:
+        user:
+            entity:
+                class: UserBundle\Entity\User
+
         user_candidat:
             entity:
                 class: UserBundle\Entity\UserCandidat

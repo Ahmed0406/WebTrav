@@ -4,20 +4,20 @@ easy_admin:
             - label: 'User'
               icon: 'users'
               children:
+                - { label: 'Tout User', icon: 'user', entity: 'User' }
                 - { label: 'Candidat', icon: 'user', entity: 'UserCandidat' }
                 - { label: 'Recruteur', icon: 'user', entity: 'UserRecruteur' }
     site_name: 'ADMIN <em style="font-size: 80%;">Dashboard</em>'
     entities:
-        UserCandidat:
-            class: UserBundle\Entity\UserCandidat
+        User:
+            class: UserBundle\Entity\User
             list:
-                fields: ['nom', 'username', 'email', 'enabled', { property: 'roles'}]
-            form:
+                fields: ['username', 'email', 'enabled', { property: 'roles'}]
+            edit:
                 fields:
-                    - 'nom'
                     - 'username'
                     - 'email'
-                    - {property: 'password', type: 'password'}
+                    - { property: 'plainPassword', label: 'Password', type: 'text', type_options: { required: false } }
                     - 'enabled'
                     - property: 'roles'
                       label: 'Roles'
@@ -26,20 +26,65 @@ easy_admin:
                           expanded: true
                           multiple: true
                           choices: {'Candidat': 'ROLE_CANDIDAT', 'Recruteur': 'ROLE_RECRUTEUR','Administrator': 'ROLE_ADMIN'}
-            password_encoding: { algorithm: 'bcrypt', cost: 12 }
 
+            new:
+                fields:
+                    - 'username'
+                    - 'email'
+                    - { property: 'plainPassword', label: 'Password', type: 'text', type_options: { required: false } }
+                    - 'enabled'
+                    - property: 'roles'
+                      label: 'Roles'
+                      type: choice
+                      type_options:
+                          expanded: true
+                          multiple: true
+                          choices: {'Candidat': 'ROLE_CANDIDAT', 'Recruteur': 'ROLE_RECRUTEUR','Administrator': 'ROLE_ADMIN'}
+                form_options: { validation_groups: ['Registration'] }
 
+        UserCandidat:
+            class: UserBundle\Entity\UserCandidat
+            list:
+                fields: ['username', 'email', 'enabled', { property: 'roles'}]
+            edit:
+                fields:
+                    - 'username'
+                    - 'email'
+                    - { property: 'plainPassword', label: 'Password', type: 'text', type_options: { required: false } }
+                    - 'enabled'
+                    - property: 'roles'
+                      label: 'Roles'
+                      type: choice
+                      type_options:
+                          expanded: true
+                          multiple: true
+                          choices: {'Candidat': 'ROLE_CANDIDAT', 'Recruteur': 'ROLE_RECRUTEUR'}
+                form_options: { validation_groups: ['Profile'] }
+
+            new:
+                fields:
+                    - 'username'
+                    - 'email'
+                    - { property: 'plainPassword', label: 'Password', type: 'text', type_options: { required: false } }
+                    - 'enabled'
+                    - property: 'roles'
+                      label: 'Roles'
+                      type: choice
+                      type_options:
+                          expanded: true
+                          multiple: true
+                          choices: {'Candidat': 'ROLE_CANDIDAT', 'Recruteur': 'ROLE_RECRUTEUR'}
+                form_options: { validation_groups: ['Registration'] }
 
         UserRecruteur:
             class: UserBundle\Entity\UserRecruteur
             list:
-                fields: ['name', 'username', 'email', 'enabled']
-            form:
+                fields: ['username', 'email', 'enabled', { property: 'roles'}]
+            edit:
                 fields:
-                    - 'name'
                     - 'username'
                     - 'email'
-                    - { property: 'Password', type: 'password', type_options: { required: true } }
+                    - { property: 'plainPassword', label: 'Password', type: 'text', type_options: { required: false } }
                     - 'enabled'
                     - property: 'roles'
                       label: 'Roles'
@@ -48,6 +93,21 @@ easy_admin:
                           expanded: true
                           multiple: true
                           choices: {'Candidat': 'ROLE_CANDIDAT', 'Recruteur': 'ROLE_RECRUTEUR','Administrator': 'ROLE_ADMIN'}
+                form_options: { validation_groups: ['Profile'] }
+            new:
+                fields:
+                    - 'username'
+                    - 'email'
+                    - { property: 'plainPassword', label: 'Password', type: 'text', type_options: { required: true } }
+                    - 'enabled'
+                    - property: 'roles'
+                      label: 'Roles'
+                      type: choice
+                      type_options:
+                          expanded: true
+                          multiple: true
+                          choices: {'Candidat': 'ROLE_CANDIDAT', 'Recruteur': 'ROLE_RECRUTEUR'}
+                form_options: { validation_groups: ['Registration'] }
 
     list:
         max_results: 10
