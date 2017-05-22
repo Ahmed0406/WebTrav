@@ -63,13 +63,14 @@ class ProfileController extends BaseController
         $dispatcher->dispatch(FOSUserEvents::PROFILE_EDIT_INITIALIZE, $event);
 
         $view= '';
+        $type = '';
         if (null !== $event->getResponse()) {
             return $event->getResponse();
         }
 
         if ($user->hasRole('ROLE_RECRUTEUR')){
             $type = UserRecruteurType::class;
-            $view = ':profile/recruteur_Fn/settings/info.html.twig';
+            $view = ':profile/recruteur_Fn/settings:info.html.twig';
         }
 
         elseif ($user->hasRole('ROLE_CANDIDAT')){
