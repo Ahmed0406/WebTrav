@@ -1,5 +1,47 @@
-services:
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: UserBundle\Entity\User
+    service:
+        user_manager: pugx_user_manager
+    from_email:
+        address: "%mailer_user%"
+        sender_name: "%mailer_user%"
+    registration:
+        form:
+            type: UserBundle\Form\RegistrationType
+        confirmation:
+            enabled: false
 
+    resetting:
+            email:
+                from_email:
+                    address: "%mailer_user%"
+                    sender_name: "%mailer_user%"
+
+pugx_multi_user:
+    users:
+        user:
+            entity:
+                class: UserBundle\Entity\User
+
+        user_candidat:
+            entity:
+                class: UserBundle\Entity\UserCandidat
+            registration:
+                form:
+                    type: UserBundle\Form\Type\RegistrationUserCandidatFormType
+                    name: app_user_candidat_registration
+
+        user_recruteur:
+            entity:
+                class: UserBundle\Entity\UserRecruteur
+            registration:
+                form:
+                    type: UserBundle\Form\Type\RegistrationUserRecruteurFormType
+                    name: app_user_recruteur_registration
+
+services:
     app.form.candidat.registration:
         class: UserBundle\Form\Type\RegistrationUserCandidatFormType
         tags:
