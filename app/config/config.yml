@@ -121,8 +121,48 @@ easy_admin:
     entities:
         UserCandidat:
             class: UserBundle\Entity\UserCandidat
+            list:
+                fields: ['nom', 'username', 'email', 'enabled', { property: 'roles'}]
+            form:
+                fields:
+                    - 'nom'
+                    - 'username'
+                    - 'email'
+                    - 'password'
+                    - 'enabled'
+                    - property: 'roles'
+                      label: 'Roles'
+                      type: choice
+                      type_options:
+                          expanded: true
+                          multiple: true
+                          choices: {'Candidat': 'ROLE_CANDIDAT', 'Recruteur': 'ROLE_RECRUTEUR','Administrator': 'ROLE_ADMIN'}
+
+
+
         UserRecruteur:
             class: UserBundle\Entity\UserRecruteur
+            list:
+                fields: ['name', 'username', 'email', 'enabled']
+            form:
+                fields:
+                    - 'name'
+                    - 'username'
+                    - 'email'
+                    - 'password'
+                    - 'enabled'
+                    - property: 'roles'
+                      label: 'Roles'
+                      type: choice
+                      type_options:
+                          expanded: true
+                          multiple: true
+                          choices: {'Candidat': 'ROLE_CANDIDAT', 'Recruteur': 'ROLE_RECRUTEUR','Administrator': 'ROLE_ADMIN'}
+
+    list:
+        max_results: 10
+    show:
+        max_results: 10
 
 vich_uploader:
     db_driver: orm
