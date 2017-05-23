@@ -6,6 +6,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use UserBundle\Entity\UserCandidat;
 
 
 class LoadUserData implements FixtureInterface, ContainerAwareInterface
@@ -28,11 +29,12 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
     /**
      * Load data fixtures with the passed EntityManager
      *
-     * @param ObjectManager $manager
+     * @param ObjectManager $userManager
      */
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $userManager)
     {
-        $userManager = $this->container->get('fos_user.user_manager');
+        $discriminator = $this->container->get('pugx_user.manager.user_discriminator');
+        $userManager = $this->container->get('pugx_user_manager');
 
         // Create a new user
         $user = $userManager->createUser();
@@ -41,24 +43,26 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $user->setPlainPassword('admin');
         $user->setEnabled(true);
         $user->setRoles(['ROLE_ADMIN']);
-        $manager->persist($user);
+        $userManager->updateUser($user, true);
 
+        // Create a new UserCandidat
+        $discriminator->setClass('UserBundle\Entity\UserCandidat');
         $user = $userManager->createUser();
         $user->setUsername('cdn');
         $user->setEmail('cdn@cdn.ad');
         $user->setPlainPassword('cdn');
         $user->setEnabled(true);
         $user->setRoles(['ROLE_CANDIDAT']);
-        $manager->persist($user);
+        $userManager->updateUser($user, true);
 
+        // Create a new UserRecruteur
+        $discriminator->setClass('UserBundle\Entity\UserRecruteur');
         $user = $userManager->createUser();
         $user->setUsername('rec');
         $user->setEmail('rec@rec.ad');
         $user->setPlainPassword('rec');
         $user->setEnabled(true);
         $user->setRoles(['ROLE_RECRUTEUR']);
-        $manager->persist($user);
-
-        $manager->flush();
+        $userManager->updateUser($user, true);
     }
 }
