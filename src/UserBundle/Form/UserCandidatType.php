@@ -26,8 +26,8 @@ class UserCandidatType extends AbstractType
                     ->add('state', TextType::class)
                     ->add('zipcode', NumberType::class)
                     ->add('phone', NumberType::class)
-                    ->add('image', ImageType::class)
-                    ->add('imgcover', ImageType::class);
+                    ->add('image', ImageType::class);
+//                    ->add('imgcover', ImageType::class);
                 break;
 
             default:

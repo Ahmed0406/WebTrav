@@ -1,0 +1,3 @@
+add_apropos:
+  path: /user/add_apropos
+  defaults: { _controller: AppBundle:Recruteur:addApropos}

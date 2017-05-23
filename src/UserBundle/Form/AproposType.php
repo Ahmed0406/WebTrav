@@ -16,7 +16,6 @@ class AproposType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre',TextType::class)
             ->add('description',TextareaType::class);
     }
     

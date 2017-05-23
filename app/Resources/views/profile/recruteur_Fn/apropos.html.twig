@@ -1,33 +1,45 @@
 {% trans_default_domain 'AppTranslat' %}
-<!-- Daily stats -->
-<div class="panel panel-flat">
-    <div class="panel-heading">
-        <h6 class="panel-title text-info">Informations Générales</h6>
-        <div class="heading-elements">
-            <a href="#" class="heading-text"><i class="icon-cog text-info"></i></a>
+{% if user.apropos is not null %}
+    <!-- Daily stats -->
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h6 class="panel-title text-info">Informations Générales</h6>
+            <div class="heading-elements">
+                <a href="#add-new-apropos" data-toggle="tab"><i class="icon-cog text-info"></i></a>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <p>{{ user.apropos.description }}</p>
         </div>
     </div>
+    <!-- /daily stats -->
 
-    <div class="panel-body">
-        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
-            mise en page avant impression. Le Lorem Ipsum est le faux texte standard de
-            l'imprimerie depuis les années 1500, quand un peintre anonyme assembla
-            ensemble des morceaux de texte pour réaliser un livre spécimen de polices de
-            texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à
-            la bureautique informatique, sans que son contenu n'en soit modifié. Il a
-            été popularisé dans les années 1960 grâce à la vente de feuilles Letraset
-            contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
-            dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+    <!-- Share your thoughts -->
+    <div id="add-new-apropos" class="tab-pane fade">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title text-info">Informations Générales</h6>
+                <div class="heading-elements">
+                </div>
+            </div>
+
+            <div class="panel-body">
+                {{ render(controller('AppBundle:Recruteur:addApropos')) }}
+            </div>
+        </div>
     </div>
+{% else %}
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h6 class="panel-title text-info">Informations Générales</h6>
+            <div class="heading-elements">
+            </div>
+        </div>
 
-</div>
-<!-- /daily stats -->
-
-
-<!-- Share your thoughts -->
-<div class="panel panel-flat">
-    <div class="panel-body">
-        {{ render(controller('UserBundle:Profile:add')) }}
+        <div class="panel-body">
+            {{ render(controller('AppBundle:Recruteur:addApropos')) }}
+        </div>
     </div>
-</div>
-<!-- /share your thoughts -->
+    <!-- /share your thoughts -->
+{% endif %}

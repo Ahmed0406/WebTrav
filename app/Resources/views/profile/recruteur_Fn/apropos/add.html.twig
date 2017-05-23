@@ -1,9 +1,15 @@
 {{ form_start(form) }}
-{{ dump() }}
 <div class="form-group">
-                <textarea name="enter-message" class="form-control mb-15" rows="3"
-                          cols="1"
-                          placeholder="Qu'est-ce qui préoccupe votre esprit?"></textarea>
+    {{ form_widget(form.apropos.description,
+    {'attr':
+        {
+            'name': 'enter-message',
+            'class': 'form-control mb-15',
+            'placeholder':'Qu"est-ce qui préoccupe votre esprit?',
+            'rows':'6',
+            'cols':'1'
+        }
+    }) }}
 </div>
 
 <div class="row">
@@ -25,10 +31,9 @@
     </div>
 
     <div class="col-xs-6 text-right">
-        <button type="submit"
-                class="btn btn-primary btn-labeled btn-labeled-right">
-            Save <b><i class="icon-circle-right2"></i></b></button>
+        <button type="submit" class="btn btn-primary btn-labeled btn-labeled-right">
+            Save <b><i class="icon-circle-right2"></i></b>
+        </button>
     </div>
 </div>
-{{ form_widget(form) }}
 {{ form_end(form) }}

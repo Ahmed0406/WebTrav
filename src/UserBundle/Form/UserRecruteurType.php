@@ -5,6 +5,7 @@ namespace UserBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -32,9 +33,7 @@ class UserRecruteurType extends AbstractType
                 break;
             case 'apropos':
                 $builder
-                    ->add('apropos',CollectionType::class, array(
-                        'entry_type' => AproposType::class
-                    ));
+                    ->add('apropos',AproposType::class);
                 break;
 
             default:
@@ -54,8 +53,6 @@ class UserRecruteurType extends AbstractType
             'mode' => null,
         ));
     }
-
-
 
     /**
      * {@inheritdoc}

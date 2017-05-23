@@ -4,8 +4,7 @@ app:
     prefix:   /
 
 user:
-    resource: "@UserBundle/Controller/"
-    type:     annotation
+    resource: "@UserBundle/Resources/config/routing.yml"
 
 user_cadidat_registration:
     path:  /candidat/register

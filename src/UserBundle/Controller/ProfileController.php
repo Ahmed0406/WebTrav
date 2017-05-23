@@ -7,6 +7,7 @@ use FOS\UserBundle\Controller\RegistrationController as BaseController;
 use FOS\UserBundle\Event\GetResponseUserEvent;
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Model\UserInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -62,26 +63,23 @@ class ProfileController extends BaseController
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::PROFILE_EDIT_INITIALIZE, $event);
 
-        $view= '';
+        $view = '';
         $type = '';
         if (null !== $event->getResponse()) {
             return $event->getResponse();
         }
 
-        if ($user->hasRole('ROLE_RECRUTEUR')){
+        if ($user->hasRole('ROLE_RECRUTEUR')) {
             $type = UserRecruteurType::class;
             $view = ':profile/recruteur_Fn/settings:info.html.twig';
-        }
-
-        elseif ($user->hasRole('ROLE_CANDIDAT')){
+        } elseif ($user->hasRole('ROLE_CANDIDAT')) {
             $type = UserCandidatType::class;
             $view = ':profile/candidat_Fn/settings:info.html.twig';
-        }
-        else{
+        } else {
             $this->redirectToRoute('homepage');
         }
 
-        $form = $this->createForm($type,$user, array(
+        $form = $this->createForm($type, $user, array(
             'mode' => 'info',
         ));
         $form->setData($user);
@@ -89,7 +87,7 @@ class ProfileController extends BaseController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em= $this->getDoctrine()->getManager();
+            $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
 
@@ -100,63 +98,9 @@ class ProfileController extends BaseController
 
             return $response;
         }
-dump($user);
-dump($form);
-        return $this->render($view, array(
-            'user' => $user,
-            'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * Edit the user.
-     *
-     * @param Request $request
-     *
-     * @return Response
-     */
-    public function addAction(Request $request)
-    {
-        $user = $this->getUser();
-
-        if (!is_object($user) || !$user instanceof UserInterface) {
-            throw new AccessDeniedException('This user does not have access to this section.');
-        }
-
-        /** @var $dispatcher EventDispatcherInterface */
-        $dispatcher = $this->get('event_dispatcher');
-
-        $event = new GetResponseUserEvent($user, $request);
-        $dispatcher->dispatch(FOSUserEvents::PROFILE_EDIT_INITIALIZE, $event);
-
-        if (null !== $event->getResponse()) {
-            return $event->getResponse();
-        }
-
-
-        $form = $this->createForm(UserRecruteurType::class, $user, array(
-            'mode' => 'apropos',
-        ));
         dump($user);
-
-        $form->setData($user);
         dump($form);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em= $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
-
-            if (null === $response = $event->getResponse()) {
-                $url = $this->generateUrl('fos_user_profile_show');
-                $response = new RedirectResponse($url);
-            }
-
-            return $response;
-        }
-
-        return $this->render('profile/recruteur_Fn/apropos/add.html.twig', array(
+        return $this->render($view, array(
             'user' => $user,
             'form' => $form->createView(),
         ));
