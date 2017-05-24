@@ -15,6 +15,7 @@ class AppController extends Controller
     public function indexAction()
     {
         $user = $this->getUser();
+        dump($user);
         return $this->render('app/index.html.twig', [
             'user'=>$user,
         ]);

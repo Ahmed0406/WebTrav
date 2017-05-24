@@ -37,6 +37,11 @@ class UserCandidat extends User
      */
     private $imgcover;
 
+    /**
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\CV", mappedBy="userCandidat")
+     */
+    private $cV;
+
 
     public function __construct()
     {
@@ -106,5 +111,29 @@ class UserCandidat extends User
     public function getImgcover()
     {
         return $this->imgcover;
+    }
+
+    /**
+     * Set cV
+     *
+     * @param \UserBundle\Entity\CV $cV
+     *
+     * @return UserCandidat
+     */
+    public function setCV(\UserBundle\Entity\CV $cV = null)
+    {
+        $this->cV = $cV;
+
+        return $this;
+    }
+
+    /**
+     * Get cV
+     *
+     * @return \UserBundle\Entity\CV
+     */
+    public function getCV()
+    {
+        return $this->cV;
     }
 }
