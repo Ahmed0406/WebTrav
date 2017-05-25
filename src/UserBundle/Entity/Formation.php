@@ -37,6 +37,11 @@ class Formation
     private $annee;
 
     /**
+     * @ORM\Column(type="text", length=255000000000000000, nullable=true)
+     */
+    private $description;
+
+    /**
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\CV", inversedBy="formation")
      * @ORM\JoinColumn(name="cv_id", referencedColumnName="id", nullable=false)
      */
@@ -146,5 +151,29 @@ class Formation
     public function getCV()
     {
         return $this->cV;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Formation
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

@@ -1,0 +1,67 @@
+<!-- Timeline -->
+<div class="timeline timeline-left content-group">
+    <div class="timeline-container">
+
+
+        {% for ex in experience %}
+            <!-- Blog post -->
+            <div class="timeline-row">
+                <div class="timeline-icon">
+                    <h6>{{ ex.date |date("Y") }}</h6>
+                </div>
+
+                <div class="panel panel-flat timeline-content">
+                    <div class="panel-heading">
+                        <h6 class="panel-title"><a class="text-info" href="#">{{ ex.titre }}</a></h6>
+                        <div class="heading-elements">
+                            <ul class="icons-list">
+                                <li><a data-action="collapse"></a></li>
+                                <li><a data-action="close"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <h6 class="content-group">
+                            <i class="icon-location4 position-left"></i>
+                            <a href="#">{{ ex.entreprise }}</a>
+                        </h6>
+
+                        <blockquote>
+                            <p>{{ ex.description }}</p>
+                        </blockquote>
+                    </div>
+
+                    <div class="panel-footer panel-footer-transparent">
+                        <div class="heading-elements">
+                            <ul class="list-inline list-inline-condensed heading-text">
+                                <li>
+                                    <a href="#" class="text-default"><i
+                                                class="icon-eye4 position-left"></i>
+                                        43</a>
+                                </li>
+                            </ul>
+
+                            <ul class="list-inline list-inline-condensed heading-text pull-right">
+                                <li>
+                                    <a href="#" class="text-default">15
+                                        <i class="icon-thumbs-up2 position-left"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="text-default">
+                                        <i class="icon-thumbs-down2 position-left"></i>3
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /blog post -->
+        {% endfor %}
+    </div>
+</div>
+<!-- /timeline -->

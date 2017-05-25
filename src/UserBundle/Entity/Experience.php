@@ -22,12 +22,12 @@ class Experience
     private $id;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string", nullable=false)
      */
     private $titre;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="text", nullable=true, length=255000000000000000)
      */
     private $description;
 
@@ -36,6 +36,10 @@ class Experience
      */
     private $entreprise;
 
+    /**
+     * @ORM\Column(type="string", nullable=false)
+     */
+    private $date;
     /**
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\CV", inversedBy="experience")
      * @ORM\JoinColumn(name="cv_id", referencedColumnName="id")
@@ -146,5 +150,29 @@ class Experience
     public function getCV()
     {
         return $this->cV;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Experience
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 }
