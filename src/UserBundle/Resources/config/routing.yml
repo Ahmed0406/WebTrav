@@ -1,3 +1,15 @@
 add_apropos:
   path: /user/add_apropos
   defaults: { _controller: AppBundle:Recruteur:addApropos}
+
+add_experience:
+  path: /user/cv/add_experience
+  defaults: { _controller: AppBundle:Candidat:addCVExperience }
+
+add_formation:
+  path: /user/cv/add_formation
+  defaults: { _controller: AppBundle:Candidat:addCVFormation }
+
+add_projet:
+  path: /user/cv/add_projet
+  defaults: { _controller: AppBundle:Candidat:addCVProjet }

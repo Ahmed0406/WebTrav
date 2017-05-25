@@ -38,7 +38,7 @@ class UserCandidat extends User
     private $imgcover;
 
     /**
-     * @ORM\OneToOne(targetEntity="UserBundle\Entity\CV", mappedBy="userCandidat")
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\CV", mappedBy="userCandidat",cascade={"persist"})
      */
     private $cV;
 

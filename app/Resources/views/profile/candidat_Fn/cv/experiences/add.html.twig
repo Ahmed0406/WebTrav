@@ -1,0 +1,50 @@
+{{ form_start(form, {'action': path('add_experience')}) }}
+<div class="modal-body">
+    <div class="panel-body">
+        <div class="form-group">
+            {{ form_widget(form.titre,
+            {'attr':
+                {
+                    'name': 'enter-message',
+                    'class': 'form-control mb-15',
+                    'placeholder':'Titre',
+                }
+            }) }}
+            {{ form_widget(form.entreprise,
+            {'attr':
+                {
+                    'name': 'enter-message',
+                    'class': 'form-control mb-15',
+                    'placeholder':'Entreprise',
+                }
+            }) }}
+            {{ form_widget(form.date,
+            {'attr':
+                {
+                    'name': 'enter-message',
+                    'class': 'form-control mb-15',
+                    'placeholder':'Date',
+                    'rows':'6',
+                    'cols':'1'
+                }
+            }) }}
+            {{ form_widget(form.description,
+            {'attr':
+                {
+                    'name': 'enter-message',
+                    'class': 'form-control mb-15',
+                    'placeholder':'Description',
+                    'rows':'6',
+                    'cols':'1'
+                }
+            }) }}
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-link" data-dismiss="modal">
+        Close
+    </button>
+    <button type="submit" class="btn btn-primary">Save</button>
+</div>
+{{ form_end(form) }}

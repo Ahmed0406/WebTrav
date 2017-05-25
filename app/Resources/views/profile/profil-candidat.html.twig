@@ -36,7 +36,6 @@
         </div>
     </div>
     <!-- /cover area -->
-
     <!-- Toolbar -->
     <div class="navbar navbar-default navbar-xs content-group">
         <ul class="nav navbar-nav visible-xs-block">
@@ -242,95 +241,13 @@
                 <!-- /connections -->
 
             </div>
-
-            <!-- add with modal -->
-            <div id="modal_default" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="navbar navbar-default ">
-                                <ul class="nav navbar-nav">
-                                    <li class="active">
-                                        <a href="#addExperiences" data-toggle="tab"><i
-                                                    class="icon-stack-check position-left"></i>
-                                            Expériences</a>
-                                    </li>
-                                    <li>
-                                        <a href="#addFormations" data-toggle="tab"><i
-                                                    class="icon-stack-text position-left"></i>
-                                            Formations</a>
-                                    </li>
-                                    <li>
-                                        <a href="#addProjets" data-toggle="tab"><i
-                                                    class="icon-pencil-ruler position-left"></i> Projets</a>
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="tabbable">
-                                <div class="tab-content">
-                                    <form action="#" class="tab-pane fade in active" id="addExperiences">
-                                        <div class="modal-body">
-                                            <div class="panel-body">
-                                                <div class="schedule">
-                                                    addExperiences
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-link" data-dismiss="modal">
-                                                Close
-                                            </button>
-                                            <button type="button" class="btn btn-primary">Save</button>
-                                        </div>
-                                    </form>
-
-                                    <form action="#" class="tab-pane fade" id="addFormations">
-                                        <div class="modal-body">
-                                            <div class="panel-body">
-                                                <div class="schedule">
-                                                    addFormations
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-link" data-dismiss="modal">
-                                                Close
-                                            </button>
-                                            <button type="button" class="btn btn-primary">Save</button>
-                                        </div>
-                                    </form>
-
-                                    <form action="#" class="tab-pane fade" id="addProjets">
-                                        <div class="modal-body">
-                                            <div class="panel-body">
-                                                <div class="schedule">
-                                                    addProjets
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-link" data-dismiss="modal">
-                                                Close
-                                            </button>
-                                            <button type="button" class="btn btn-primary">Save</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- /add with modal -->
-            </div>
-            <!-- /user profile -->
         </div>
         <!-- /content area -->
 
     </div>
     <!-- /main content -->
+
+
+    {{ render(controller('AppBundle:Candidat:addCV')) }}
+
 {% endblock %}

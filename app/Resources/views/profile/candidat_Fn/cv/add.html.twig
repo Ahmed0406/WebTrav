@@ -1,0 +1,47 @@
+<!-- add with modal -->
+<div id="modal_default" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="navbar navbar-default ">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="#addExperiences" data-toggle="tab"><i class="icon-stack-check position-left"></i>
+                                Expériences</a>
+                        </li>
+                        <li>
+                            <a href="#addFormations" data-toggle="tab"><i class="icon-stack-text position-left"></i>
+                                Formations</a>
+                        </li>
+                        <li>
+                            <a href="#addProjets" data-toggle="tab"><i class="icon-pencil-ruler position-left"></i>
+                                Projets</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="tabbable">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="addExperiences">
+                            {{ render(controller('AppBundle:Candidat:addCVExperience')) }}
+                        </div>
+
+                        <div class="tab-pane fade" id="addFormations">
+                            {{ render(controller('AppBundle:Candidat:addCVFormation')) }}
+                        </div>
+
+                        <div class="tab-pane fade" id="addProjets">
+                            {{ render(controller('AppBundle:Candidat:addCVProjet')) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /add with modal -->
+</div>
+<!-- /user profile -->

@@ -29,9 +29,15 @@ class UserCandidatType extends AbstractType
                     ->add('image', ImageType::class);
 //                    ->add('imgcover', ImageType::class);
                 break;
+            case 'cv':
+                $builder
+                    ->add('cV',CVType::class,array(
+                        'model' => $options['model']
+                    ));
+                break;
 
             default:
-                throw new \Exception('You need to select which type of user form type you want to use.');
+                throw new \Exception('UserCandidat.class no type choisie.');
                 break;
         }
     }
@@ -44,6 +50,7 @@ class UserCandidatType extends AbstractType
         $resolver->setDefaults(array(
             'data_class' => 'UserBundle\Entity\UserCandidat',
             'mode' => null,
+            'model' => null,
         ));
     }
 

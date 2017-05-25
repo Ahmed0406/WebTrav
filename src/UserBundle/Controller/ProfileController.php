@@ -98,8 +98,6 @@ class ProfileController extends BaseController
 
             return $response;
         }
-        dump($user);
-        dump($form);
         return $this->render($view, array(
             'user' => $user,
             'form' => $form->createView(),

@@ -33,7 +33,7 @@ class CV
     private $langue;
 
     /**
-     * @ORM\OneToOne(targetEntity="UserBundle\Entity\UserCandidat", inversedBy="cV")
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\UserCandidat", inversedBy="cV", cascade={"all"}, orphanRemoval=true)
      * @ORM\JoinColumn(name="cv_candidat_id", referencedColumnName="id", nullable=false, unique=true)
      */
     private $userCandidat;

@@ -15,6 +15,16 @@ class AppController extends Controller
     public function indexAction()
     {
         $user = $this->getUser();
+        /*$exp = array();
+        foreach ($user->getCV()->getExperience() as $ex){
+            array_push($exp, $ex);
+        }
+
+        foreach ($exp as $e){
+            dump($e->getTitre());
+        }
+
+        dump($exp);*/
         dump($user);
         return $this->render('app/index.html.twig', [
             'user'=>$user,
