@@ -21,16 +21,19 @@
                                 <span class="display-block">Tunisia, Mahdia</span>
                             </div>
 
-                            <a href="#" class="display-inline-block content-group-sm">
-                                {% if ( (not user.image) or (not vich_uploader_asset(user.image, 'imageFile')) ) %}
-                                    <img src="{{ asset('images/man.png') }}" class="img-circle img-responsive"
-                                         alt="" style="width: 150px;">
-                                {% else %}
-                                    <img src="{{ vich_uploader_asset(user.image, 'imageFile') }}"
-                                         class="img-circle img-responsive"
-                                         alt="" style="width: 110px; height: 110px;">
-                                {% endif %}
-                            </a>
+
+                            {% if ( (not user.image) or (not vich_uploader_asset(user.image, 'imageFile')) ) %}
+                                <a data-popup="lightbox" href="{{ asset('images/man.png') }}"
+                                   class="display-inline-block content-group-sm">
+                                    <img src="{{ asset('images/man.png') }}" class="img-circle img-responsive" alt="">
+                                </a>
+                            {% else %}
+                                <a data-popup="lightbox" href="{{ vich_uploader_asset(user.image, 'imageFile') }}"
+                                   class="display-inline-block content-group-sm">
+                                    <img src="{{ vich_uploader_asset(user.image, 'imageFile') }}" class="img-circle img-responsive"
+                                         alt="">
+                                </a>
+                            {% endif %}
 
                             <ul class="list-inline list-inline-condensed no-margin-bottom">
                                 <li>

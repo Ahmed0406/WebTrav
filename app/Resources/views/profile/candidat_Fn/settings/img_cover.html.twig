@@ -1,0 +1,36 @@
+
+<div class="media-right media-middle">
+    <ul class="list-inline list-inline-condensed no-margin-bottom text-nowrap">
+        <li><a href="#modal_cover" class="btn btn-default" data-toggle="modal" data-target="#modal_cover">
+                <i class="icon-file-picture position-left">
+                </i> Cover image</a>
+        </li>
+    </ul>
+</div>
+
+<!-- Basic modal -->
+<div id="modal_cover" class="modal fade" data-backdrop="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <i class="icon-close2"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    {{ form_start(form, {'action': path('add_img_cover')}) }}
+                    {{ form_widget(form.imgcover.imageFile,{
+                        'attr':{
+                            'type':'file',
+                            'class':'file-input',
+                        }
+                    }) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /basic modal -->

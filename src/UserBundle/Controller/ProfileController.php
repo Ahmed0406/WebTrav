@@ -18,10 +18,7 @@ use UserBundle\Form\UserRecruteurType;
 
 class ProfileController extends BaseController
 {
-    /**
-     * Show the user.
-     */
-    public function showAction()
+    public function showAction(Request $request)
     {
         $user = $this->getUser();
         $parent_template_var = '';
@@ -33,13 +30,61 @@ class ProfileController extends BaseController
             $parent_template_var = 'profile/profil-candidat.html.twig';
         } elseif ($user->hasRole('ROLE_RECRUTEUR')) {
             $parent_template_var = 'profile/profil-recuteur.html.twig';
-        } else {
-            return $this->redirectToRoute('admin');
         }
+        elseif ($user->hasRole('ROLE_ADMIN')) {
+            return $this->redirectToRoute('admin');
+        }else {
+            return $this->redirectToRoute('homepage');
+        }
+
 
         return $this->render(':profile:profile.html.twig', array(
             'user' => $user,
             'parent_template_var' => $parent_template_var,
+        ));
+    }
+
+    /***
+     * @param Request $request
+     *
+     * @return Response
+     */
+    public function addProfilCoverImgAction(Request $request)
+    {
+        $user = $this->getUser();
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
+
+        $event = new GetResponseUserEvent($user, $request);
+        $form = $this->createForm('UserBundle\Form\UserCandidatType', $user, array(
+            'mode' => 'img_cover',
+        ));
+
+        $form->setData($user);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+
+            if (null === $response = $event->getResponse()) {
+                $url = $this->generateUrl('fos_user_profile_show');
+                $response = new RedirectResponse($url);
+            }
+            else{
+                $url = $this->generateUrl('fos_user_profile_show');
+                $response = new RedirectResponse($url);
+            }
+
+            return $response;
+        }
+
+        return $this->render(':profile/candidat_Fn/settings:img_cover.html.twig', array(
+            'user' => $user,
+            'form' => $form->createView(),
         ));
     }
 

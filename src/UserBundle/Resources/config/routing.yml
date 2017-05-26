@@ -13,3 +13,8 @@ add_formation:
 add_projet:
   path: /user/cv/add_projet
   defaults: { _controller: AppBundle:Candidat:addCVProjet }
+
+add_img_cover:
+  path: /user/add_img_cover
+  defaults: { _controller: UserBundle:Profile:addProfilCoverImg}
+  methods: POST

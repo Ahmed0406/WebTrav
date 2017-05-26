@@ -80,8 +80,14 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label class="display-block">Upload profile image</label>
-                    {{ form_widget(form.image,{'attr': {'class': 'file-styled'}}) }}
+                    <label class="display-block">Télécharger l'image de profil</label>
+                    {{ form_widget(form.image.imageFile,{
+                        'attr': {
+                            'type': 'file',
+                            'class': 'file-input',
+                            'data-show-preview': 'true',
+                        }
+                    }) }}
                     <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
                 </div>
             </div>

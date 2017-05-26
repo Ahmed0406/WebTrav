@@ -68,7 +68,14 @@
 
         <div class="col-md-6">
             <label class="display-block">{{ 'recruteur.setting.panel-info.image'|trans }}</label>
-            {{ form_widget(form.image) }}
+            {{ form_widget(form.image.imageFile,{
+                'attr': {
+                    'type': 'file',
+                    'class': 'file-input',
+                    'data-show-preview': 'true',
+                    'required': 'false',
+                }
+            }) }}
             <span class="help-block">{{ 'recruteur.setting.panel-info.image-desc'|trans }}</span>
         </div>
     </div>

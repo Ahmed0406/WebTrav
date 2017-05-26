@@ -72,12 +72,16 @@ class ChangePasswordController extends Controller
                 $url = $this->generateUrl('fos_user_profile_show');
                 $response = new RedirectResponse($url);
             }
+            else{
+                $url = $this->generateUrl('fos_user_profile_show');
+                $response = new RedirectResponse($url);
+            }
 
             $dispatcher->dispatch(FOSUserEvents::CHANGE_PASSWORD_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
             return $response;
         }
 
-        return $this->render(':profile/recruteur_Fn/settings:change_password.html.twig', array(
+        return $this->render(':profile:change_password.html.twig', array(
             'user' => $user,
             'form' => $form->createView(),
         ));

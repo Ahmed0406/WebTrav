@@ -27,13 +27,21 @@ class UserCandidatType extends AbstractType
                     ->add('zipcode', NumberType::class)
                     ->add('phone', NumberType::class)
                     ->add('image', ImageType::class);
-//                    ->add('imgcover', ImageType::class);
+//
                 break;
             case 'cv':
                 $builder
                     ->add('cV',CVType::class,array(
                         'model' => $options['model']
                     ));
+                break;
+            case 'img_cover':
+                $builder
+                    ->add('imgcover', ImageType::class);
+                break;
+            case 'img_profil':
+                $builder
+                    ->add('imgcover', ImageType::class);
                 break;
 
             default:
