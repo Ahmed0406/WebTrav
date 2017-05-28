@@ -2,6 +2,7 @@
 
 namespace UserBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use PUGX\MultiUserBundle\Validator\Constraints\UniqueEntity;
 
@@ -42,11 +43,17 @@ class UserCandidat extends User
      */
     private $cV;
 
+    /**
+     * @ORM\OneToMany(targetEntity="UserBundle\Entity\Reponse", mappedBy="userCandidat")
+     */
+    private $reponse;
+
 
     public function __construct()
     {
         parent::__construct();
         $this->roles = array('ROLE_CANDIDAT');
+        $this->reponse = new ArrayCollection();
     }
 
     /**
@@ -120,7 +127,7 @@ class UserCandidat extends User
      *
      * @return UserCandidat
      */
-    public function setCV(\UserBundle\Entity\CV $cV = null)
+    public function setCV(CV $cV = null)
     {
         $this->cV = $cV;
 
@@ -135,5 +142,40 @@ class UserCandidat extends User
     public function getCV()
     {
         return $this->cV;
+    }
+
+
+    /**
+     * Add reponse
+     *
+     * @param \UserBundle\Entity\Reponse $reponse
+     *
+     * @return UserCandidat
+     */
+    public function addReponse(Reponse $reponse)
+    {
+        $this->reponse[] = $reponse;
+
+        return $this;
+    }
+
+    /**
+     * Remove reponse
+     *
+     * @param \UserBundle\Entity\Reponse $reponse
+     */
+    public function removeReponse(Reponse $reponse)
+    {
+        $this->reponse->removeElement($reponse);
+    }
+
+    /**
+     * Get reponse
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReponse()
+    {
+        return $this->reponse;
     }
 }

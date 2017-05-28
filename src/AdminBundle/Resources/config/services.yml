@@ -7,6 +7,13 @@ easy_admin:
                 - { label: 'Tout User', icon: 'user', entity: 'User' }
                 - { label: 'Candidat', icon: 'user', entity: 'UserCandidat' }
                 - { label: 'Recruteur', icon: 'user', entity: 'UserRecruteur' }
+
+            - label: 'Quiz'
+              icon: 'tasks'
+              children:
+              entity: 'Quiz'
+
+
     site_name: 'ADMIN <em style="font-size: 80%;">Dashboard</em>'
     entities:
         User:
@@ -108,6 +115,25 @@ easy_admin:
                           multiple: true
                           choices: {'Candidat': 'ROLE_CANDIDAT', 'Recruteur': 'ROLE_RECRUTEUR'}
                 form_options: { validation_groups: ['Registration'] }
+
+        Quiz:
+            class: UserBundle\Entity\Quiz
+            list:
+                fields: ['titre', 'tags', 'question']
+            form:
+                fields:
+                    - { type: 'group', css_class: 'col-sm-4'}
+                    - 'titre'
+                    - 'tags'
+                    - { type: 'group', css_class: 'col-sm-8'}
+                    - property: 'question'
+                      type: collection
+                      type_options:
+                        entry_type: UserBundle\Form\QuestionType
+                        allow_add: true
+                        allow_delete: true
+                        by_reference: false
+                        required: true
 
     list:
         max_results: 10
