@@ -19,11 +19,7 @@ class AdminController extends BaseController
      */
     public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
         $user = $this->getUser();
-
-        $quiz = $em->getRepository('UserBundle:Quiz')->findAll();
-        dump($quiz);
 
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');

@@ -17,9 +17,9 @@ class QuizRepository extends EntityRepository
             ->createQuery(
                 'SELECT e
                 FROM UserBundle:Quiz e
-                WHERE e.titre LIKE :str'
+                WHERE e.tags LIKE :str'
             )
-            ->setParameter('str', '%'.$str.'%')
+            ->setParameter('str', array('%'.$str.'%'))
             ->getResult();
     }
 }

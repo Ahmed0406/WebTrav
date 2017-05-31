@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use JMS\Serializer\SerializerBuilder;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -37,8 +38,10 @@ class ChercherQuizController extends Controller
         }*/
 
         $em = $this->getDoctrine()->getManager();
+        $serializer = SerializerBuilder::create()->build();
+
         $requestString = $request->get('q');
-        $entities  = $em->getRepository('UserBundle:Quiz')->findAll();
+        $entities  = $em->getRepository('UserBundle:Quiz')->findEntitiesByString($requestString);
 
         if(!$entities) {
             $result['Quiz']['error'] = "aucune recherche trouvé";
@@ -46,7 +49,11 @@ class ChercherQuizController extends Controller
             $result['Quiz'] = $this->getRealEntities($entities);
         }
 
-        return new Response(json_encode($result));
+
+        $response = new Response($serializer->serialize($result, 'json'));
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response;
     }
 
     public function getRealEntities($entities){

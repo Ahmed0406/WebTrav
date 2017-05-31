@@ -175,3 +175,91 @@
     {{ render(controller('AppBundle:Candidat:addCV')) }}
 
 {% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            var searchRequest = null;
+            $("#search").keyup(function () {
+                var minlength = 3;
+                var that = this;
+                var value = $(this).val();
+                var entitySelector = $("#entitiesNav").html('');
+                if (value.length >= minlength) {
+
+                    if (searchRequest !== null) {
+                        searchRequest.abort();
+                    }
+
+                    searchRequest = $.ajax({
+                        type: "GET",
+                        url: "{{ path('ajax_search') }}",
+                        data: {
+                            'q': value
+                        },
+                        dataType: "text",
+
+                        success: function (msg) {
+                            //we need to check if the value is the same
+                            if (value === $(that).val()) {
+                                var result = JSON.parse(msg);
+                                var verif = '';
+                                var values = '';
+                                $.each(result, function (key, arr) {
+
+                                    $.each(arr, function (id, value) {
+                                        if (key === 'Quiz') {
+                                            if (id !== 'error') {
+                                                verif = 'ok';
+                                            } else {
+                                                verif = 'no';
+                                                values = value
+                                            }
+                                        }
+                                    });
+
+
+                                    $.each(arr, function (id, value) {
+                                        if (key === 'Quiz') {
+                                            if (verif === 'ok') {
+                                                entitySelector.append(
+                                                    '<li class="media panel panel-body stack-media-on-mobile">' +
+                                                    '<div class="media-left">' +
+                                                    '<a href="#">' +
+                                                    '<h3>' + value.titre + '</h3>' +
+                                                    '</a>' +
+                                                    '</div>' +
+
+                                                    '<div class="media-body">' +
+                                                    '<h6 class="media-heading text-semibold">' +
+                                                    '<a href="#">Interaction UX/UI Industrial Designer</a>' +
+                                                    '</h6>' +
+
+                                                    '<ul class="list-inline list-inline-separate text-muted mb-10">' +
+                                                    '<li><a href="#" class="text-muted">Base</a></li>' +
+                                                    '<li>Amsterdam, Netherlands</li>' +
+                                                    '</ul>' +
+
+                                                    '<p></p>' +
+                                                    '</div>' +
+
+                                                    '<div class="media-right text-nowrap">' +
+                                                    '<span class="label bg-blue">New</span>' +
+                                                    '</div>' +
+                                                    '</li>'
+                                                );
+                                            } else {
+                                                entitySelector.append('<li class="errorLi">' + values + '</li>');
+                                            }
+                                        }
+                                    });
+                                });
+
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+{% endblock %}
