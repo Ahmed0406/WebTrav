@@ -8,12 +8,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
 
 class ChercherQuizController extends Controller
 {
@@ -41,12 +35,12 @@ class ChercherQuizController extends Controller
         $serializer = SerializerBuilder::create()->build();
 
         $requestString = $request->get('q');
-        $entities  = $em->getRepository('UserBundle:Quiz')->findEntitiesByString($requestString);
+        $quiz = $em->getRepository('UserBundle:Quiz')->findEntitiesByString($requestString);
 
-        if(!$entities) {
+        if (!$quiz) {
             $result['Quiz']['error'] = "aucune recherche trouvé";
         } else {
-            $result['Quiz'] = $this->getRealEntities($entities);
+            $result['Quiz'] = $this->getRealEntities($quiz);
         }
 
 
@@ -56,11 +50,37 @@ class ChercherQuizController extends Controller
         return $response;
     }
 
-    public function getRealEntities($entities){
+    public function getRealEntities($entities)
+    {
         $realEntities = array();
-        foreach ($entities as $entity){
-            array_push($realEntities,$entity);
+        foreach ($entities as $entity) {
+            array_push($realEntities, $entity);
         }
         return $realEntities;
+    }
+
+    /**
+     *
+     * @Route("/quiz/{id}", name="quiz_show", requirements={"id": "\d+"})
+     * @param $id
+     * @return Response
+     */
+    public function showQuizAction($id)
+    {
+        $user = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $quiz = $em->getRepository('UserBundle:Quiz')->find($id);
+
+        $question = array();
+        foreach ($quiz->getQuestion() as $qz){
+            array_push($question, $qz);
+        }
+
+        return $this->render(':profile/candidat_Fn/quiz:show.html.twig', array(
+            'user' => $user,
+            'quiz' => $quiz,
+            'question' => $question
+        ));
+
     }
 }
