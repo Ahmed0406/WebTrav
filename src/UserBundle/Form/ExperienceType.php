@@ -3,6 +3,8 @@
 namespace UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -20,7 +22,7 @@ class ExperienceType extends AbstractType
             ->add('titre',TextType::class)
             ->add('description',TextareaType::class)
             ->add('entreprise',TextType::class)
-            ->add('date',TextType::class);
+            ->add('date',IntegerType::class);
     }
     
     /**

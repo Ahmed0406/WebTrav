@@ -18,7 +18,8 @@
                         <img src="{{ asset('images/man.png') }}" class="img-circle" alt="">
                     </a>
                 {% else %}
-                    <a data-popup="lightbox" href="{{ vich_uploader_asset(user.image, 'imageFile') }}" class="profile-thumb">
+                    <a data-popup="lightbox" href="{{ vich_uploader_asset(user.image, 'imageFile') }}"
+                       class="profile-thumb">
                         <img src="{{ vich_uploader_asset(user.image, 'imageFile') }}" class="img-circle" alt="">
                     </a>
                 {% endif %}
@@ -90,101 +91,7 @@
 
                         <div class="tab-pane fade" id="quiz">
 
-
-                            <!-- Search field -->
-                            <div class="panel panel-flat">
-                                <div class="panel-body">
-                                    <form action="#" class="main-search">
-                                        <div class="input-group content-group">
-                                            <div class="has-feedback has-feedback-left">
-                                                <input type="text" class="form-control input-xlg" value=""
-                                                       placeholder="De quelle domaine vous voulez">
-                                                <div class="form-control-feedback">
-                                                    <i class="icon-search4 text-muted text-size-base"></i>
-                                                </div>
-                                            </div>
-
-                                            <div class="input-group-btn">
-                                                <button type="submit" class="btn btn-primary btn-xlg">Search
-                                                </button>
-                                            </div>
-                                        </div>
-
-                                        <div class="row search-option-buttons">
-                                            <div class="col-sm-6">
-                                                <ul class="list-inline list-inline-condensed no-margin-bottom">
-                                                    <li>
-                                                        <button type="reset" class="btn btn-link">
-                                                            <i class="icon-reload-alt position-left"></i>
-                                                            Réinitialiser votre recherche
-                                                        </button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- /search field -->
-
-
-                            <!-- Detached content -->
-                            <div class="container-detached">
-                                <div class="content-detached">
-
-                                    <!-- Cards layout -->
-                                    <ul class="media-list content-group">
-                                        <li class="media panel panel-body stack-media-on-mobile">
-                                            <div class="media-left">
-                                                <a href="#">
-                                                    <h3>HTML</h3>
-                                                </a>
-                                            </div>
-
-                                            <div class="media-body">
-                                                <h6 class="media-heading text-semibold">
-                                                    <a href="#">Interaction UX/UI Industrial Designer</a>
-                                                </h6>
-
-                                                <ul class="list-inline list-inline-separate text-muted mb-10">
-                                                    <li><a href="#" class="text-muted">Base</a></li>
-                                                    <li>Amsterdam, Netherlands</li>
-                                                </ul>
-
-                                                <p>Extended kindness trifling remember he confined outlived if.
-                                                    Assistance sentiments yet unpleasing say. Open they an busy they
-                                                    my such high. An active dinner wishes at unable hardly no talked
-                                                    on. Immediate him her resolving his favourite. Wished denote
-                                                    abroad at branch at. Mind what no by kept.</p>
-                                            </div>
-
-                                            <div class="media-right text-nowrap">
-                                                <span class="label bg-blue">New</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <!-- /cards layout -->
-
-
-                                    <!-- Pagination -->
-                                    <div class="text-center content-group-lg pt-20">
-                                        <ul class="pagination">
-                                            <li class="disabled"><a href="#"><i
-                                                            class="icon-arrow-small-left"></i></a></li>
-                                            <li class="active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#"><i class="icon-arrow-small-right"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- /pagination -->
-
-                                </div>
-                            </div>
-                            <!-- /detached content -->
-
+                            {{ render(controller('AppBundle:ChercherQuiz:show')) }}
 
                         </div>
 
@@ -225,14 +132,14 @@
             <div class="col-lg-3">
 
                 <!-- Navigation -->
-                <div class="panel panel-flat">
+                {#<div class="panel panel-flat">
 
                     <div class="list-group no-border no-padding-top">
                         <a href="#" class="list-group-item"><i class="icon-envelop"></i> Messages
                             <span class="badge bg-danger pull-right">29</span></a>
                         <a href="#" class="list-group-item"><i class="icon-users"></i> Friends</a>
                     </div>
-                </div>
+                </div>#}
                 <!-- /navigation -->
 
 
@@ -246,10 +153,10 @@
                                 </div>
                                 <div class="media-body">
                                     <span class="media-heading text-semibold">James Alexander</span>
-                                    <span class="media-annotation">UI/UX expert</span>
+                                    <span class="media-annotation">Development Web</span>
                                 </div>
                                 <div class="media-right media-middle">
-                                    <span class="status-mark bg-success"></span>
+                                    {#<span class="status-mark bg-success"></span>#}
                                 </div>
                             </a>
                         </li>

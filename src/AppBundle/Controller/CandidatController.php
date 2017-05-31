@@ -189,7 +189,7 @@ class CandidatController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
+            $em->persist($frm);
             $em->flush();
 
             if (null === $response = $event->getResponse()) {
@@ -240,7 +240,7 @@ class CandidatController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
+            $em->persist($pro);
             $em->flush();
 
             if (null === $response = $event->getResponse()) {

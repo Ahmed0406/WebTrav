@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Content area -->
+    <div class="content">
+        <!-- Search field -->
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h5 class="panel-title">Chercher des Recruteur</h5>
+                <div class="heading-elements">
+                    <ul class="icons-list">
+                        <li><a data-action="collapse"></a></li>
+                        <li><a data-action="close"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel-body">
+                <form action="#" class="main-search">
+                    <div class="input-group content-group">
+                        <div class="has-feedback has-feedback-left">
+                            <input type="text" class="form-control input-xlg" placeholder="Limitless interface kit">
+                            <div class="form-control-feedback">
+                                <i class="icon-search4 text-muted text-size-base"></i>
+                            </div>
+                        </div>
+
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-primary btn-xlg">Chercher</button>
+                        </div>
+                    </div>
+
+                    <div class="row search-option-buttons">
+                        <div class="col-sm-6">
+                            <ul class="list-inline list-inline-condensed no-margin-bottom">
+                                <li>
+                                    <button type="reset" class="btn btn-link">
+                                        <i class="icon-reload-alt position-left"></i> Réinitialiser votre
+                                        recherche
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-6 text-right">
+                            <ul class="list-inline no-margin-bottom">
+                                <li><a href="#" class="btn btn-link"><i class="icon-menu7 position-left"></i>
+                                        Advanced search</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /search field -->
+{#
+        <!-- Search results -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="panel panel-body">
+
+                    <ul class="media-list search-results-list content-group">
+                        <li class="media stack-media-on-mobile">
+                            <div class="media-left">
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img src="{{ asset('images/demo/flat/1.png') }}"
+                                             class="img-responsive img-rounded media-preview" alt="">
+                                        <span class="zoom-image"><i class="icon-play3"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="media-body">
+                                <h6 class="media-heading"><a href="#">Up unpacked friendly</a></h6>
+                                <ul class="list-inline list-inline-separate text-muted">
+                                    <li><i class="icon-book-play position-left"></i> Video tutorials</li>
+                                    <li>14 minutes ago</li>
+                                </ul>
+                                The him father parish looked has sooner. Attachment frequently gay terminated
+                                son. You greater nay use prudent placing passage to so distant behaved natural
+                                between do talking...
+                            </div>
+                        </li>
+                    </ul>
+
+                    #}{#<div class="text-center pt-10 pb-10">
+                        <ul class="pagination pagination-flat">
+                            <li class="disabled"><a href="#">&larr;</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><span>...</span></li>
+                            <li><a href="#">58</a></li>
+                            <li><a href="#">59</a></li>
+                            <li><a href="#">&rarr;</a></li>
+                        </ul>
+                    </div>#}{#
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="panel panel-body">
+                    <div class="content-group">
+                        <div class="thumb">
+                            <a href="#">
+                                <img src="{{ asset('images/demo/flat/4.png') }}" class="img-responsive img-rounded" alt="">
+                                <span class="zoom-image"><i class="icon-play3"></i></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <h5 class="text-semibold">Limitless UI kit
+                        <small class="display-block"></small>
+                    </h5>
+                    <p class="content-group">In post mean shot ye. There out her child sir his lived. Design at
+                        uneasy me season of branch on praise esteem. Abilities discourse
+                        believing consisted remaining to no. Mistaken no me denoting
+                        dashwood as screened. Whence or esteem easily he on. Dissuade
+                        husbands at of no if disposal. Oh he decisively impression
+                        attachment friendship so if everything.</p>
+
+                    <ul class="list content-group">
+                        <li><span class="text-semibold">Author:</span> <a href="#">Eugene Kopyov</a></li>
+                        <li><span class="text-semibold">Time spent:</span> 8 months</li>
+                        <li><span class="text-semibold">Client base:</span> <a href="#">16,893 (2015)</a></li>
+                        <li><span class="text-semibold">Pages:</span> 1200+</li>
+                        <li><span class="text-semibold">Latest update:</span> June 1, 2015</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /search results -->
+        #}
+    </div>
+    <!-- /content area -->
+{% endblock %}

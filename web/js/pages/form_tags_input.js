@@ -367,7 +367,7 @@ $(function() {
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         limit: 10,
         prefetch: {
-            url: 'assets/demo_data/tags_input/cities.json'
+            url: 'demo_data/tags_input/cities.json'
         }
     });
 
@@ -406,7 +406,7 @@ $(function() {
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         limit: 10,
         prefetch: {
-            url: 'assets/demo_data/tags_input/cities.json'
+            url: 'demo_data/tags_input/cities.json'
         }
     });
 

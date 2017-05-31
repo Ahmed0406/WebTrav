@@ -1,18 +1,17 @@
+<div class="tab-pane fade in active" id="experiences">
 
-        <div class="tab-pane fade in active" id="experiences">
+    {{ render(controller('AppBundle:Candidat:showCVExperience')) }}
 
-            {{ render(controller('AppBundle:Candidat:showCVExperience')) }}
+</div>
 
-        </div>
+<div class="tab-pane fade" id="formations">
 
-        <div class="tab-pane fade" id="formations">
+    {{ render(controller('AppBundle:Candidat:showCVFormation')) }}
 
-            {{ render(controller('AppBundle:Candidat:showCVFormation')) }}
+</div>
 
-        </div>
+<div class="tab-pane fade" id="projets">
 
-        <div class="tab-pane fade" id="projets">
+    {{ render(controller('AppBundle:Candidat:showCVProjet')) }}
 
-            {{ render(controller('AppBundle:Candidat:showCVProjet')) }}
-
-        </div>
+</div>
