@@ -14,26 +14,35 @@
                 </div>
             </div>
 
-            <form class="steps-validation" action="#">
+            {{ form_start(form, {'method': 'POST'}) }}
+            <div class="stepy-validation">
+                {% set i = 0 %}
                 {% for qz in question %}
-                    <h6></h6>
-                    <fieldset>
-                        <h4>{{ qz.titre }}<span class="position-right text-danger">*</span>
-                        </h4>
+                    <fieldset title="{{ i }}">
+                        <legend class="text-semibold"></legend>
+                        <h4>{{ qz.titre }}<span class="position-right text-danger">*</span></h4>
                         <div class="form-group">
                             {% for ch in qz.chnce %}
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="availability1" class="styled required">
+                                        <input type="radio" name="choix_{{ i }}" value="{{ ch }}"
+                                               class="styled required">
                                         <code>&lt;{{ ch }}&gt;</code>
                                     </label>
                                 </div>
                             {% endfor %}
                         </div>
                     </fieldset>
+                    {% set i = i + 1 %}
                 {% endfor %}
+                <fieldset title="o">
+                    <legend class="text-semibold">Finished</legend>
+                </fieldset>
 
-            </form>
+                <button type="submit" class="btn btn-primary stepy-finish">Submit <i
+                            class="icon-check position-right"></i></button>
+            </div>
+            {{ form_end(form) }}
         </div>
         <!-- /wizard with validation -->
 

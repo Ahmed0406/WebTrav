@@ -100,6 +100,15 @@ $(function() {
         bodyTag: "fieldset",
         transitionEffect: "fade",
         titleTemplate: '<span class="number">#index#</span> #title#',
+        labels: {
+            cancel: "Annuler",
+            current: "Étape actuelle:",
+            pagination: "Pagination",
+            finish: "Envoyer",
+            next: "Suivant",
+            previous: "Précédent",
+            loading: "Loading ..."
+        },
         autoFocus: true,
         onStepChanging: function (event, currentIndex, newIndex) {
 
@@ -144,7 +153,7 @@ $(function() {
         },
 
         onFinished: function (event, currentIndex) {
-            alert("Submitted!");
+            alert( "Data Loaded: " + form );
         }
     });
 
