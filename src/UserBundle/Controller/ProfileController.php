@@ -31,6 +31,7 @@ class ProfileController extends BaseController
         if ($user->hasRole('ROLE_CANDIDAT')) {
             $parent_template_var = 'profile/profil-candidat.html.twig';
             $score = $em->getRepository(Reponse::class)->findByCandidatScore($user->getId());
+            dump($score);
         } elseif ($user->hasRole('ROLE_RECRUTEUR')) {
             $parent_template_var = 'profile/profil-recuteur.html.twig';
         }
