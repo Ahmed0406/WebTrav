@@ -1,6 +1,6 @@
 <?php
 
-namespace UserBundle\Entity;
+namespace UserBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -12,4 +12,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class UserCandidatRepository extends EntityRepository
 {
+    public function findCdnByDomaine($requestString)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT cdn
+                FROM UserBundle:UserCandidat cdn
+                WHERE cdn.domaine LIKE :str'
+            )
+            ->setParameter('str', array('%' . $requestString . '%'))
+            ->getResult();
+
+    }
 }

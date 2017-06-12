@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use PUGX\MultiUserBundle\Validator\Constraints\UniqueEntity;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\UserCandidatRepository")
  * @ORM\Table(name="user_candidat")
  * @UniqueEntity(fields = "username", targetClass = "UserBundle\Entity\User", message="fos_user.username.already_used")
  * @UniqueEntity(fields = "email", targetClass = "UserBundle\Entity\User", message="fos_user.email.already_used")
@@ -30,6 +30,11 @@ class UserCandidat extends User
      * @ORM\Column(type="string", nullable=true)
      */
     private $prenom;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $domaine;
 
     /**
      * @var Image
@@ -59,6 +64,22 @@ class UserCandidat extends User
     /**
      * @return mixed
      */
+    public function getDomaine()
+    {
+        return $this->domaine;
+    }
+
+    /**
+     * @param mixed $domaine
+     */
+    public function setDomaine($domaine)
+    {
+        $this->domaine = $domaine;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getNom()
     {
         return $this->nom;
@@ -70,6 +91,16 @@ class UserCandidat extends User
     public function setNom($nom)
     {
         $this->nom = $nom;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
     }
 
     /**
@@ -87,13 +118,13 @@ class UserCandidat extends User
     }
 
     /**
-     * Get prenom
+     * Get imgcover
      *
-     * @return string
+     * @return Image
      */
-    public function getPrenom()
+    public function getImgcover()
     {
-        return $this->prenom;
+        return $this->imgcover;
     }
 
     /**
@@ -111,13 +142,13 @@ class UserCandidat extends User
     }
 
     /**
-     * Get imgcover
+     * Get cV
      *
-     * @return Image
+     * @return \UserBundle\Entity\CV
      */
-    public function getImgcover()
+    public function getCV()
     {
-        return $this->imgcover;
+        return $this->cV;
     }
 
     /**
@@ -133,17 +164,6 @@ class UserCandidat extends User
 
         return $this;
     }
-
-    /**
-     * Get cV
-     *
-     * @return \UserBundle\Entity\CV
-     */
-    public function getCV()
-    {
-        return $this->cV;
-    }
-
 
     /**
      * Add reponse

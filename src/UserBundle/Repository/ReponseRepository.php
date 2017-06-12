@@ -94,4 +94,22 @@ class ReponseRepository extends EntityRepository
             ->setParameter('quiz', $quiz)
             ->getResult();
     }
+
+    public function findByCandidat($Candidat)
+    {
+        $return = array();
+        foreach ($Candidat as $cdn) {
+            array_push($return,
+                $this->getEntityManager()
+                    ->createQuery(
+                        'SELECT reponse
+                FROM UserBundle:Reponse reponse
+                WHERE reponse.userCandidat = :cdn'
+                    )
+                    ->setParameter('cdn', $cdn->getId())
+                    ->getResult());
+        }
+
+        return $return;
+    }
 }
