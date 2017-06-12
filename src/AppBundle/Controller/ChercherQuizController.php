@@ -83,6 +83,16 @@ class ChercherQuizController extends Controller
         $event = new GetResponseUserEvent($user, $request);
 
         $quiz = $em->getRepository('UserBundle:Quiz')->find($id);
+        $reponce = $em->getRepository('UserBundle:Reponse')->findByQuiz($quiz);
+
+        /*verifier si le quiz est bien passer */
+        foreach ($reponce as $r) {
+            if (($r->getUserCandidat() == $user && $r->getQuiz() == $quiz && $r->getSuccess() == true) ||
+                (($r->getUserCandidat() == $user && $r->getQuiz() == $quiz) && !$this->checkDate($r->getDate()))
+            ) {
+                return $this->redirectToRoute('fos_user_profile_show');
+            }
+        }
 
         $question = array();
         foreach ($quiz->getQuestion() as $qz) {
@@ -90,7 +100,6 @@ class ChercherQuizController extends Controller
         }
 
         $form = $this->createFormBuilder()
-            // ...
             ->getForm();
         $form->handleRequest($request);
 
@@ -103,7 +112,7 @@ class ChercherQuizController extends Controller
             $reponce->setQuiz($quiz);
             $reponce->setUserCandidat($user);
             $reponce->setSuccess($q);
-            $reponce->setDate(new \DateTime());
+            $reponce->setDate(new \DateTime(date('Y-m-d')));
             $em->persist($reponce);
             $em->flush();
 
@@ -153,6 +162,19 @@ class ChercherQuizController extends Controller
         }
 
         return $r;
+    }
+
+    public function checkDate($dates)
+    {
+        $return = false;
+        $date = $dates->format('Y-m-d');
+        $compare = date("Y-m-d", strtotime('now'));
+
+        if (intval(date("d", strtotime($compare) - strtotime($date)) >= 15)) {
+            $return = true;
+        }
+
+        return $return;
     }
 
     /**

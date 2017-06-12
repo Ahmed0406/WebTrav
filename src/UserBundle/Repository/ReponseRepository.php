@@ -28,7 +28,7 @@ class ReponseRepository extends EntityRepository
 
     public function sommeScore($result)
     {
-        $return = [];
+        $return = ['score' => 0];
         $score = 10;
 
         foreach ($result as $values) {
@@ -75,10 +75,23 @@ class ReponseRepository extends EntityRepository
             }
         }
 
-        $return['data']= $data;
-        $return['label']= $label;
+        $return['data'] = $data;
+        $return['label'] = $label;
 
         return $return;
 
+    }
+
+
+    public function findByQuiz($quiz)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT reponse
+                FROM UserBundle:Reponse reponse
+                WHERE reponse.quiz = :quiz'
+            )
+            ->setParameter('quiz', $quiz)
+            ->getResult();
     }
 }

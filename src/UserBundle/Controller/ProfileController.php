@@ -7,7 +7,6 @@ use FOS\UserBundle\Controller\RegistrationController as BaseController;
 use FOS\UserBundle\Event\GetResponseUserEvent;
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Model\UserInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,16 +30,13 @@ class ProfileController extends BaseController
         if ($user->hasRole('ROLE_CANDIDAT')) {
             $parent_template_var = 'profile/profil-candidat.html.twig';
             $score = $em->getRepository(Reponse::class)->findByCandidatScore($user->getId());
-            dump($score);
         } elseif ($user->hasRole('ROLE_RECRUTEUR')) {
             $parent_template_var = 'profile/profil-recuteur.html.twig';
-        }
-        elseif ($user->hasRole('ROLE_ADMIN')) {
+        } elseif ($user->hasRole('ROLE_ADMIN')) {
             return $this->redirectToRoute('admin');
-        }else {
+        } else {
             return $this->redirectToRoute('homepage');
         }
-
 
         return $this->render(':profile:profile.html.twig', array(
             'user' => $user,
@@ -78,8 +74,7 @@ class ProfileController extends BaseController
             if (null === $response = $event->getResponse()) {
                 $url = $this->generateUrl('fos_user_profile_show');
                 $response = new RedirectResponse($url);
-            }
-            else{
+            } else {
                 $url = $this->generateUrl('fos_user_profile_show');
                 $response = new RedirectResponse($url);
             }
