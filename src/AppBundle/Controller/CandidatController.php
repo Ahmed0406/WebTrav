@@ -87,7 +87,7 @@ class CandidatController extends Controller
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
-        if ($user->getCV() == null){
+        if ($user->getCV() == null) {
             $cv = new CV();
             $cv->setUserCandidat($user);
             $user->setCV($cv);

@@ -17,12 +17,12 @@ class FormationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('scolarite',TextType::class)
-            ->add('diplome',TextType::class)
-            ->add('annee',IntegerType::class)
-            ->add('description',TextareaType::class);
+            ->add('scolarite', TextType::class)
+            ->add('diplome', TextType::class)
+            ->add('annee', IntegerType::class)
+            ->add('description', TextareaType::class);
     }
-    
+
     /**
      * {@inheritdoc}
      */

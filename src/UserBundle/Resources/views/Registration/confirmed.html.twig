@@ -3,12 +3,13 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-<!-- Content area -->
-<div class="content">
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}<a href="{{ path('homepage') }}">{{ 'registration.back'|trans }}</a></p>
-    {% if targetUrl %}
-    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
-    {% endif %}
-</div>
+    <!-- Content area -->
+    <div class="content">
+        <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}<a
+                    href="{{ path('homepage') }}">{{ 'registration.back'|trans }}</a></p>
+        {% if targetUrl %}
+            <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+        {% endif %}
+    </div>
     <!-- /content area -->
 {% endblock fos_user_content %}

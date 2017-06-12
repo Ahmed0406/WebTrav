@@ -53,7 +53,6 @@ class RecruteurController extends Controller
     }
 
 
-
     /**
      * Edit the user.
      *

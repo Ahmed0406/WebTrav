@@ -23,19 +23,19 @@ class CVType extends AbstractType
                 break;
             case 'experience':
                 $builder
-                    ->add('experience',CollectionType::class,array(
+                    ->add('experience', CollectionType::class, array(
                         'entry_type' => ExperienceType::class,
                     ));
                 break;
             case 'formation':
                 $builder
-                    ->add('formation',CollectionType::class,array(
+                    ->add('formation', CollectionType::class, array(
                         'entry_type' => FormationType::class,
                     ));
                 break;
             case 'projet':
                 $builder
-                    ->add('projet',CollectionType::class,array(
+                    ->add('projet', CollectionType::class, array(
                         'entry_type' => ProjetType::class,
                     ));
                 break;
@@ -46,7 +46,7 @@ class CVType extends AbstractType
         }
 
     }
-    
+
     /**
      * {@inheritdoc}
      */

@@ -3,9 +3,7 @@
 namespace UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,21 +17,21 @@ class UserRecruteurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         dump($options['mode']);
-        switch ($options['mode']){
+        switch ($options['mode']) {
             case 'info':
                 $builder
-                    ->add('name',TextType::class)
-                    ->add('address1',TextType::class)
-                    ->add('address2',TextType::class)
-                    ->add('city',TextType::class)
-                    ->add('state',TextType::class)
-                    ->add('zipcode',NumberType::class)
-                    ->add('phone',NumberType::class)
-                    ->add('image',ImageType::class);
+                    ->add('name', TextType::class)
+                    ->add('address1', TextType::class)
+                    ->add('address2', TextType::class)
+                    ->add('city', TextType::class)
+                    ->add('state', TextType::class)
+                    ->add('zipcode', NumberType::class)
+                    ->add('phone', NumberType::class)
+                    ->add('image', ImageType::class);
                 break;
             case 'apropos':
                 $builder
-                    ->add('apropos',AproposType::class);
+                    ->add('apropos', AproposType::class);
                 break;
 
             default:

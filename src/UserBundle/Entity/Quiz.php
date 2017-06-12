@@ -54,6 +54,7 @@ class Quiz
     {
         return $this->id;
     }
+
     /**
      * Constructor
      */

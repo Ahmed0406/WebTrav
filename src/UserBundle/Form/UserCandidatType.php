@@ -31,7 +31,7 @@ class UserCandidatType extends AbstractType
                 break;
             case 'cv':
                 $builder
-                    ->add('cV',CVType::class,array(
+                    ->add('cV', CVType::class, array(
                         'model' => $options['model']
                     ));
                 break;

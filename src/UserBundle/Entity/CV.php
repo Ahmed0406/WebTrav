@@ -28,8 +28,8 @@ class CV
     private $competence;
 
     /**
- * @ORM\Column(type="array", nullable=true)
- */
+     * @ORM\Column(type="array", nullable=true)
+     */
     private $langue;
 
     /**
@@ -134,6 +134,7 @@ class CV
     {
         return $this->userCandidat;
     }
+
     /**
      * Constructor
      */

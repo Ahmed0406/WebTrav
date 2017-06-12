@@ -2,7 +2,7 @@
 
 namespace UserBundle\Repository;
 
-use \Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\EntityRepository;
 
 /**
  * QuizRepository
@@ -12,14 +12,15 @@ use \Doctrine\ORM\EntityRepository;
  */
 class QuizRepository extends EntityRepository
 {
-    public function findEntitiesByString($str){
+    public function findEntitiesByString($str)
+    {
         return $this->getEntityManager()
             ->createQuery(
                 'SELECT e
                 FROM UserBundle:Quiz e
                 WHERE e.tags LIKE :str'
             )
-            ->setParameter('str', array('%'.$str.'%'))
+            ->setParameter('str', array('%' . $str . '%'))
             ->getResult();
     }
 }

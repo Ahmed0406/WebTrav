@@ -3,7 +3,6 @@
 namespace UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -19,12 +18,12 @@ class ExperienceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre',TextType::class)
-            ->add('description',TextareaType::class)
-            ->add('entreprise',TextType::class)
-            ->add('date',IntegerType::class);
+            ->add('titre', TextType::class)
+            ->add('description', TextareaType::class)
+            ->add('entreprise', TextType::class)
+            ->add('date', IntegerType::class);
     }
-    
+
     /**
      * {@inheritdoc}
      */

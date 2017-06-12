@@ -8,6 +8,6 @@ class AdminBundle extends Bundle
 {
     public function getParent()
     {
-       return 'EasyAdminBundle';
+        return 'EasyAdminBundle';
     }
 }

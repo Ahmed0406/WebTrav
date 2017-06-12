@@ -8,7 +8,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use UserBundle\Entity\Question;
-use UserBundle\Entity\Quiz;
 
 class QuestionType extends AbstractType
 {
@@ -19,7 +18,7 @@ class QuestionType extends AbstractType
     {
         $builder
             ->add('titre', TextType::class)
-            ->add('chnce',CollectionType::class,array(
+            ->add('chnce', CollectionType::class, array(
                 'allow_add' => true,
                 'allow_delete' => true,
             ))

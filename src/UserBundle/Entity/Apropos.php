@@ -3,7 +3,6 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use UserBundle\Form\UserRecruteurType;
 
 /**
  * Apropos

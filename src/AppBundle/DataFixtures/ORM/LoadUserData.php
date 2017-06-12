@@ -6,7 +6,6 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use UserBundle\Entity\UserCandidat;
 
 
 class LoadUserData implements FixtureInterface, ContainerAwareInterface

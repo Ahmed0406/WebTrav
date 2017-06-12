@@ -2,7 +2,7 @@
 
 namespace UserBundle\Repository;
 
-use \Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\EntityRepository;
 
 /**
  * CVRepository

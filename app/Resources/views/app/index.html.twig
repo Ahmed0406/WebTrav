@@ -9,7 +9,8 @@
                     <div class="col-md-3 col-sm-3 text-center">
                         <div class="">
                             <div class="">
-                                <a data-fancybox class="fancybox-media" href="http://www.youtube.com/watch?v=opj24KnzrWo">
+                                <a data-fancybox class="fancybox-media"
+                                   href="http://www.youtube.com/watch?v=opj24KnzrWo">
                                     <img src="{{ asset('images/play-youtube.png') }}" alt="">
                                 </a>
                             </div>
@@ -23,12 +24,14 @@
                         <div class="row connect">
                             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                             {% else %}
-                            <div class="btn col-md-3 col-md-offset-2">
-                                <a href="{{ path('fos_user_security_login') }}"><img src="{{ asset('images/login.png') }}" alt="insrit"></a>
-                            </div>
-                            <div class="btn col-md-3 col-md-offset-1">
-                                <a href="{{ path('fos_user_registration_register') }}"><img src="{{ asset('images/inscrit.png') }}" alt="login"></a>
-                            </div>
+                                <div class="btn col-md-3 col-md-offset-2">
+                                    <a href="{{ path('fos_user_security_login') }}"><img
+                                                src="{{ asset('images/login.png') }}" alt="insrit"></a>
+                                </div>
+                                <div class="btn col-md-3 col-md-offset-1">
+                                    <a href="{{ path('fos_user_registration_register') }}"><img
+                                                src="{{ asset('images/inscrit.png') }}" alt="login"></a>
+                                </div>
                             {% endif %}
                         </div>
                     </div>
@@ -101,7 +104,8 @@
                     <div class="panel-body">
                         <ul class="media-list">
                             <li class="media">
-                                <a href="#" class="media-left"><img src="images/demo/users/face2.jpg" class="img-circle" alt=""></a>
+                                <a href="#" class="media-left"><img src="images/demo/users/face2.jpg" class="img-circle"
+                                                                    alt=""></a>
                                 <div class="media-right media-middle">
                                     <ul class="icons-list text-nowrap">
                                         <li><a href="#"><i class="icon-star-full2"></i></a></li>
@@ -114,7 +118,8 @@
                             </li>
 
                             <li class="media">
-                                <a href="#" class="media-left"><img src="images/demo/users/face3.jpg" class="img-circle" alt=""></a>
+                                <a href="#" class="media-left"><img src="images/demo/users/face3.jpg" class="img-circle"
+                                                                    alt=""></a>
                                 <div class="media-right media-middle">
                                     <ul class="icons-list text-nowrap">
                                         <li><a href="#"><i class="icon-star-full2"></i></a></li>
@@ -127,7 +132,8 @@
                             </li>
 
                             <li class="media">
-                                <a href="#" class="media-left"><img src="images/demo/users/face4.jpg" class="img-circle" alt=""></a>
+                                <a href="#" class="media-left"><img src="images/demo/users/face4.jpg" class="img-circle"
+                                                                    alt=""></a>
                                 <div class="media-right media-middle">
                                     <ul class="icons-list text-nowrap">
                                         <li><a href="#"><i class="icon-star-full2"></i></a></li>
@@ -140,7 +146,8 @@
                             </li>
 
                             <li class="media">
-                                <a href="#" class="media-left"><img src="images/demo/users/face5.jpg" class="img-circle" alt=""></a>
+                                <a href="#" class="media-left"><img src="images/demo/users/face5.jpg" class="img-circle"
+                                                                    alt=""></a>
                                 <div class="media-right media-middle">
                                     <ul class="icons-list text-nowrap">
                                         <li><a href="#"><i class="icon-star-full2"></i></a></li>
@@ -153,7 +160,8 @@
                             </li>
 
                             <li class="media">
-                                <a href="#" class="media-left"><img src="images/demo/users/face6.jpg" class="img-circle" alt=""></a>
+                                <a href="#" class="media-left"><img src="images/demo/users/face6.jpg" class="img-circle"
+                                                                    alt=""></a>
                                 <div class="media-right media-middle">
                                     <ul class="icons-list text-nowrap">
                                         <li><a href="#"><i class="icon-star-full2"></i></a></li>

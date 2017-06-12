@@ -3,11 +3,10 @@
 namespace AdminBundle\Controller;
 
 use FOS\UserBundle\Model\UserInterface;
+use JavierEguiluz\Bundle\EasyAdminBundle\Controller\AdminController as BaseController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-
-use JavierEguiluz\Bundle\EasyAdminBundle\Controller\AdminController as BaseController;
 
 class AdminController extends BaseController
 {

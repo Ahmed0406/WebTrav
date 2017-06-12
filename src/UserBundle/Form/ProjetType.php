@@ -2,9 +2,7 @@
 
 namespace UserBundle\Form;
 
-use Doctrine\DBAL\Types\ArrayType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -20,7 +18,7 @@ class ProjetType extends AbstractType
         $builder
             ->add('titre', TextType::class)
             ->add('description', TextareaType::class)
-            ->add('competence',TextType::class);
+            ->add('competence', TextType::class);
     }
 
     /**
