@@ -31,12 +31,13 @@ class ReponseRepository extends EntityRepository
         $return = [];
         $score = 10;
 
-        foreach ($result as $key => $value) {
-            if ($key == true) {
-                $return = ['score' => $score];
-                $score = $score + 10;
+        foreach ($result as $values) {
+            foreach ($values as $key => $value) {
+                if ($value == true) {
+                    $return = ['score' => $score];
+                    $score = $score + 10;
+                }
             }
-
         }
         return $return;
     }
