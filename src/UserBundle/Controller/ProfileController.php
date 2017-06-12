@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use UserBundle\Entity\Reponse;
 use UserBundle\Form\UserCandidatType;
 use UserBundle\Form\UserRecruteurType;
 
@@ -21,13 +22,15 @@ class ProfileController extends BaseController
     public function showAction(Request $request)
     {
         $user = $this->getUser();
-        $parent_template_var = '';
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
+        $em = $this->getDoctrine()->getManager();
+        $score = null;
         if ($user->hasRole('ROLE_CANDIDAT')) {
             $parent_template_var = 'profile/profil-candidat.html.twig';
+            $score = $em->getRepository(Reponse::class)->findByCandidatScore($user->getId());
         } elseif ($user->hasRole('ROLE_RECRUTEUR')) {
             $parent_template_var = 'profile/profil-recuteur.html.twig';
         }
@@ -41,6 +44,7 @@ class ProfileController extends BaseController
         return $this->render(':profile:profile.html.twig', array(
             'user' => $user,
             'parent_template_var' => $parent_template_var,
+            'score' => $score,
         ));
     }
 

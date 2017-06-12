@@ -63,12 +63,18 @@
     padding-top: 30px;
 }
 
-#content-footer a{
+#content-footer a {
     text-decoration: none;
     color: inherit;
 }
 
-#content-footer a:hover{
+#content-footer a:hover {
     color: white;
+}
+
+#score_quiz {
+    width: 285px !important;
+    height: 150px !important;
+    margin-bottom: -10px !important;
 }
 

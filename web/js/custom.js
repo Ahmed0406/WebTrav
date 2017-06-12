@@ -20,10 +20,10 @@ $(function () {
     var modalTest =
         '<div class="modal-dialog modal-md">\n' +
         '<div class="modal-content">\n' +
-        '<div class="modal-body">\n'+
-        '<div class="profile-thumb">\n'+
-        '      <div class="kv-zoom-body file-zoom-content"></div>\n'+
-        '</div>\n'+
+        '<div class="modal-body">\n' +
+        '<div class="profile-thumb">\n' +
+        '      <div class="kv-zoom-body file-zoom-content"></div>\n' +
+        '</div>\n' +
         '</div>\n' +
         '</div>\n' +
         '</div>\n';
@@ -80,5 +80,31 @@ $(function () {
         fileActionSettings: fileActionSettings
     });
 
+    /*Chart for profile Candidat*/
+
+    $.get('/reponce/etapes', function (datas) {
+        var dataQuiz = [0];
+        var labels = [""];
+        dataQuiz = dataQuiz.concat(datas.data);
+        labels = labels.concat(datas.label);
+
+        var lineChartData = {
+            labels: labels,
+            datasets: [
+                {
+                    fillColor: "rgba(151,187,205,0.5)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    data: dataQuiz
+                }
+            ]
+
+        };
+
+        new Chart(document.getElementById("score_quiz").getContext("2d")).Line(lineChartData);
+    });
+    /*/Chart for profile Candidat*/
 
 });
+
